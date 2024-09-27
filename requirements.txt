@@ -1,0 +1,3 @@
+fastapi[all]
+unicorn
+Jinja2
