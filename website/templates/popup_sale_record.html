@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/popup_sale_record.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="picture_product">
+            <img src="../static/img/mock_product.png" alt="img_product">
+        </div>
+
+        <div class="detail">
+            <h1>Name: Product</h1>
+            <p class="details">รายละเอียดสินค้า</p>
+            <h2>ประเภทสินค้า: แหวน</h2>
+            <h2>Size</h2>
+            <input class="size" type="text" required>
+            <h2>ราคา</h2>
+            <div class="price">
+                <input type="text" required>
+                <p>BAHT</p>
+            </div>
+            <h2>จำนวน</h2>
+            <div class="counter-container">
+                <button id="decrement">-</button>
+                <input type="number" id="counter" value="1">
+                <button id="increment">+</button>
+            </div>
+            <button class="button_next">Next</button>
+        </div>
+    </div>
+    <script src="../static/javascript/popup_sale_record.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anada Jewellery</title>
+    <link rel="stylesheet" href="../static/css/sale_record.css">
+</head>
+<body>
+    <!-- ส่วนหัวของเว็บพวกแถบเมนู -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Anada Jewellry</h1>
+                <div class="login">
+                    <img src="../static/img/person_5.png" alt="logo">
+                    <p>เข้าสู่ระบบ</p>
+                </div>
+            </div>
+            <div class="menu">
+                <a id="button_sale_record_id" class="button_sale_record" href="#" onclick="window.location.reload(); return false;">Sale Record</a>
+                <div class="dropdown_financial">
+                    <button id="dropdown_financial_id" class="dropdown_financial_class">Financial</button>
+                    <div id="drop" class="drop-down">
+                        <a href="event.html">Event</a>
+                        <a href="month.html">Month</a>
+                    </div>
+                </div>
+                <div class="dropdown_Stock">
+                    <button id="dropdown_Stock_id" class="dropdown_Stock_class">Stock</button>
+                    <div id="drop_stock_id" class="drop_stock_class">
+                        <a href="event.html">Stock smth</a>
+                        <a href="month.html">Manage Stock</a>
+                    </div>
+                </div>
+                <a id="button_events_id" class="button_events" href="#" >Events</a> 
+            </div>
+        </div>
+    </header>
+
+    <!-- ส่วนเนื้อหาข้างใน -->
+    <body class="content">
+        <div class="white-square">
+            <div class="list_product">
+                <button class="ring"> <img src="../static/img/ring.png" width="50px" height="50px"> แหวน Rings </button>
+                <button class="earring"> <img src="../static/img/earrings.png" width="50px" height="50px"> ต่างหู Earrings</button>
+                <button class="bracelets"> <img src="../static/img/bracelet.png" width="50px" height="50px"> สร้อยข้อมือ Bracelets</button>
+                <button class="bangles"> <img src="../static/img/bangles.png" width="50px" height="50px"> กำไล Bangles</button>
+                <button class="necklaces"> <img src="../static/img/necklace.png" width="50px" height="50px"> สร้อยคอ Necklaces</button>
+                <button class="pendants"> <img src="../static/img/pendant.png" width="50px" height="50px"> จี้ Pendants</button>
+            </div>
+            <div class="show_product">
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product1</h3>
+                </div>
+
+                <div class="product_2">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product2</h3>
+                </div>
+
+                <div class="product_3">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product3</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product4</h3>
+                </div>
+
+                <div class="product_2">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product5</h3>
+                </div>
+
+                <div class="product_3">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product6</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product7</h3>
+                </div>
+
+                <div class="product_2">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product8</h3>
+                </div>
+
+                <div class="product_3">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product9</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product10</h3>
+                </div>
+
+                <div class="product_2">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Produc11</h3>
+                </div>
+
+                <div class="product_3">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product12</h3>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../static/javascript/sale_record.js"></script>
+</body>
+</html>

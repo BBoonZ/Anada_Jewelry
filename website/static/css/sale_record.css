@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #384B70;
+    padding: 9px 0px 0px 0px;
+    position: relative;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.logo h1{
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    left: 52%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.login p {
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+}
+
+.login img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    padding: 0 20px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 0 0 70px;
+    height: 100%;
+}
+
+.button_sale_record {
+    background-color: #384B70;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.button_events {
+    background-color: #384B70;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-decoration: none;
+    text-align: left;
+}
+
+/* ตอนวางที่ปุ่ม sale record */
+.button_sale_record:hover {
+    background-color: #9EDDF8;
+    color: black;
+}
+
+/* ตอนวางที่ปุ่ม events */
+.button_events:hover {
+    background-color: #9EDDF8;
+    color: black;
+}
+
+.dropdown_financial {
+    position: relative;
+    display: inline-block;
+}
+
+/* list financial */
+.dropdown_financial_class {
+    background-color: #384B70;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    transition: background-color ease;
+}
+
+/* list financial ตอนกดแล้ว */
+.dropdown_financial_class.active {
+    background-color: #9EDDF8;
+    color: black;
+}
+
+/* เมนู dropdown ที่ซ่อนอยู่ก่อนกด */
+.drop-down {
+    display: none;
+    position: absolute;
+    background-color: #9EDDF8;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* ข้างในปุ่ม financial */
+.drop-down a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* ปุ่ม Stock */
+.dropdown_Stock {
+    position: relative;
+    display: inline-block;
+}
+
+/* ปุ่ม Stock */
+.dropdown_Stock_class {
+    background-color: #384B70;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    transition: background-color ease; /* ใช้เปลี่ยนสี */
+}
+
+/* button stock ตอนกดแล้ว */
+.dropdown_Stock_class.active {
+    background-color: #9EDDF8;
+    color: black;
+}
+
+/* button stock ตอนกด */
+.drop_stock_class {
+    display: none;
+    position: absolute;
+    background-color: #9EDDF8;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* ข้างใน stock */
+.drop_stock_class a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.drop_stock_class a:hover {
+    background-color: #9EDDF8;
+}
+
+/* ส่วนเนื้อหา */
+.content {
+    background-color: #D3F2FF;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* พื้นที่สีขาว */
+.white-square {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    width: 90%;
+    height: 80vh;
+    background-color: white;
+    margin: 50px 50px 0 100px;
+}
+
+/* ส่วนของปุ่มข้าง ๆ */
+.list_product {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    width: 200px;
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+.list_product button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 0 5px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.show_product {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-start; /* จัดให้อยู่ทางซ้าย */
+    align-items: flex-start; /* จัดให้อยู่ด้านบน */
+    text-align: left;
+    padding: 20px 100px;
+    gap: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.product_1 {
+    width: 350px;
+}
+
+.product_1 img {
+    width: 100%;
+    height: auto;
+}
+
+.product_1 h3{
+    text-align: center;
+}
+
+.product_2 {
+    width: 350px;
+}
+
+.product_2 img {
+    width: 100%;
+    height: auto;
+}
+
+.product_2 h3{
+    text-align: center;
+}
+
+.product_3 {
+    width: 350px;
+}
+
+.product_3 img {
+    width: 100%;
+    height: auto;
+}
+
+.product_3 h3{
+    text-align: center;
+}
+
+/* ตกแต่ง scroll bar */
+.show_product::-webkit-scrollbar {
+    width: 10px; /* กำหนดความกว้างของ scrollbar */
+}
+
+.show_product::-webkit-scrollbar-track {
+    background: #E8E8E8;
+    border-radius: 10%;
+}
+
+.show_product::-webkit-scrollbar-thumb {
+    background: #9E9C9C;
+    border-radius: 10px;
+}
+
+.show_product::-webkit-scrollbar-thumb:hover {
+    background: #737070;
+}
