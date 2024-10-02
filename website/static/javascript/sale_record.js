@@ -33,5 +33,5 @@ function openPopup() {
     const top = Math.max(0, (window.screen.availHeight - popupHeight) / 2);
 
     // เปิดหน้าต่าง Popup
-    window.open('popup_sale_record.html', 'popupWindow', `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=0,scrollbars=yes`);
+    window.open('popup_sale_record_1.html', 'popupWindow', `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=0,scrollbars=yes`);
 }

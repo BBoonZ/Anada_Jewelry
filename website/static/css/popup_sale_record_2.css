@@ -1,0 +1,88 @@
+.content_2 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 20px;
+}
+
+.left_content {
+    grid-column: 1;
+}
+
+.right_content {
+    grid-column: 2;
+}
+
+.left_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.left_content button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #FFE6BA;
+    border-radius: 7px;
+    border: 1px solid black;
+    margin-left: 6px;
+    margin-bottom: 20px;
+}
+
+.left_content img{
+    max-width: 100%;
+    width: 430px;
+    height: 420px;
+    object-fit: contain;
+}
+
+.right_content h1{
+    margin-bottom: 0;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.detail_product {
+    margin-top: 0;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #9E9C9C;
+    margin-bottom: 20px;
+}
+
+.right_content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+.right_content p {
+    margin-top: 5px;
+    font-size: 23px;
+}
+
+.both_button {
+    display: flex;
+    gap: 20px;
+    margin-top: 113px;
+}
+
+.button_cancel {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid;
+}
+
+.button_submit {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    color: white;
+    background-color: #008CFF;
+    border: 1px solid black;
+}
