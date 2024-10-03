@@ -35,3 +35,5 @@ def read_root():
 
 
 #เวลา run พิมพ์ uvicorn main:app ใน terminal
+
+#route /test แสดง html
