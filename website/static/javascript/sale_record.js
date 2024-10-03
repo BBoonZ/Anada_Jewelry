@@ -11,19 +11,6 @@ document.getElementById("dropdown_financial_id").addEventListener("click", funct
     }
 });
 
-document.getElementById("dropdown_Stock_id").addEventListener("click", function() {
-    const drop_stock_id = document.getElementById("drop_stock_id");
-    const dropdown_Stock_id = document.getElementById("dropdown_Stock_id");
-
-    if (drop_stock_id.style.display === "block") {
-        drop_stock_id.style.display = "none";
-        dropdown_Stock_id.classList.remove("active");
-    } else {
-        drop_stock_id.style.display = "block";
-        dropdown_Stock_id.classList.add("active");
-    }
-});
-
 function openPopup() {
     const popupWidth = 900;
     const popupHeight = 600;
