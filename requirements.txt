@@ -1,3 +1,7 @@
 fastapi[all]
 unicorn
 Jinja2
+sqlalchemy
+asyncpg
+databases
+psycopg2
