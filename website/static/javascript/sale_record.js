@@ -1,15 +1,15 @@
-document.getElementById("dropdown_financial_id").addEventListener("click", function() {
-    const drop = document.getElementById("drop");
-    const dropdown_financial_id = document.getElementById("dropdown_financial_id");
+// document.getElementById("dropdown_financial_id").addEventListener("click", function() {
+//     const drop = document.getElementById("drop");
+//     const dropdown_financial_id = document.getElementById("dropdown_financial_id");
 
-    if (drop.style.display === "block") {
-        drop.style.display = "none";
-        dropdown_financial_id.classList.remove("active");
-    } else {
-        drop.style.display = "block";
-        dropdown_financial_id.classList.add("active");
-    }
-});
+//     if (drop.style.display === "block") {
+//         drop.style.display = "none";
+//         dropdown_financial_id.classList.remove("active");
+//     } else {
+//         drop.style.display = "block";
+//         dropdown_financial_id.classList.add("active");
+//     }
+// });
 
 function openPopup() {
     const popupWidth = 900;
