@@ -17,7 +17,7 @@ def getAvailable():
     return info
 
 def getTypeProduct(type):
-    cursor.execute("SELECT * FROM product WHERE type = ?" (type))
+    cursor.execute("SELECT * FROM product WHERE type = ?", (type))
     info = cursor.fetchall()
     return info
 

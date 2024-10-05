@@ -37,5 +37,5 @@ def read_root():
 
 
 #เวลา run พิมพ์ uvicorn main:app ใน terminal
-
-#route /test แสดง html
+#python -m uvicorn main:app ใช้คำสั่งนี้รันได้ by คิว
+#route /recordsales แสดง html
