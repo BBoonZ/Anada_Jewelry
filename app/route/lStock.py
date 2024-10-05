@@ -16,3 +16,29 @@ def getAvailable():
     # print(info)
     return info
 
+def getTypeProduct(type):
+    cursor.execute("SELECT * FROM product WHERE type = ?" (type))
+    info = cursor.fetchall()
+    return info
+
+def DecreaseProduct(product_id):
+    for i in product_id:
+        i_str = str(i)
+        cursor.execute("SELECT stock_quantity FROM product WHERE id = ?", (i_str))
+        values = cursor.fetchall()[0][0]    # เอาแค่ value
+
+        cursor.execute("UPDATE product SET stock_quantity = ? WHERE id = ?", (values-1, i_str))
+        conn.commit()
+    print("DecreaseSuccess")
+
+def IncreaseProduct(product_id, num=1):
+    cursor.execute("SELECT stock_quantity FROM product WHERE id = ?", (product_id))
+    values = cursor.fetchall()[0][0]    # เอาแค่ value
+
+    cursor.execute("UPDATE product SET stock_quantity = ? WHERE id = ?", (values+num, product_id))
+    conn.commit()
+
+    print("IncreaseSuccess")
+
+# DecreaseProduct([6])
+IncreaseProduct("6")
