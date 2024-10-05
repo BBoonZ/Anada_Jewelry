@@ -12,9 +12,11 @@ from app.db.database import SessionLocal, engine
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="website/static"), name="static")   # Locate css file
+app.mount("/img", StaticFiles(directory="app/img"), name="img")                    # Locate img Product file
+
 
 #app route
-app.include_router(test.router)
+# app.include_router(test.router)
 app.include_router(RecordSales.router)
 
 

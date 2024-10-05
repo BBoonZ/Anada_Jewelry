@@ -15,6 +15,6 @@ class Product(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     information = Column(String, index=True)
-    file_pic = Column(String(100), nullable=False)
-    pic = Column(LargeBinary, nullable=False)
+    file_pic = Column(String(100), index=True)
+    pic = Column(LargeBinary, index=True)
     stock_quantity = Column(Integer, index=True)

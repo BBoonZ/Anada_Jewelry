@@ -45,10 +45,12 @@
                 <button class="pendants"> <img src="../static/img/pendant.png" width="50px" height="50px"> จี้ Pendants</button>
             </div>
             <div class="show_product">
+                {% for i in Avaliable %}
                 <div class="product_1">
-                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product1</h3>
+                    <a href="#" onclick="openPopup(); return false;"><img src="{{ url_for('img', path=i[3]) }}"></a>
+                    <h3>Name: {{ i[1] }}</h3>
                 </div>
+                {% endfor %}
 
                 <div class="product_2">
                     <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>

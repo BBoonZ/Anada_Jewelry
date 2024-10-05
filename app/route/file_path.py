@@ -1,12 +1,8 @@
-import os
-
-# กำหนด path ของไฟล์
-file_path = "app/file.txt"
+from pathlib import Path
+from fastapi.templating import Jinja2Templates
 
 # หา root directory ของโปรเจกต์
 def project_root():
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(file_path)))
-    print(f"Project root: {project_root}")
-    return project_root
-
-project_root()
+    BASE_DIR = Path(__file__).resolve().parent.parent.parent
+    return BASE_DIR
+print(project_root)

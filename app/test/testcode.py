@@ -1,9 +1,8 @@
-from pathlib import Path
-from fastapi.templating import Jinja2Templates
+import sqlite3
 
+conn = sqlite3.connect("instance/Anada.db")
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent  # Navigate up three levels to the project root
-templates = Jinja2Templates(directory=str(BASE_DIR / "website" / "templates"))
+cursor = conn.cursor()
 
-print(BASE_DIR)
-print(templates)
+cursor.execute('INSERT INTO product(name) VALUES ("Pig")')
+conn.commit()
