@@ -15,7 +15,6 @@
     border: 1px solid black;
 }
 
-
 /* cancel button */
 .cancel-button{
     font-size: 25px;
@@ -33,7 +32,6 @@
 /* add picture button  */
 .add-picture-button{
     background-color: white;
-
     margin-top: 10px;
     margin-left: 30px;
     padding: 10px 20px 10px 20px;
