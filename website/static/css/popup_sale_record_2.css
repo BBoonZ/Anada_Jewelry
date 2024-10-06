@@ -6,14 +6,13 @@ h1 {
 form {
     display: grid;
     grid-template-columns: repeat(1fr, 1fr, 1fr);
-    align-items: center;
     border: 1px solid black;
     padding: 10px 10px 0 10px;
 }
 
 .list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 40px 1fr 50px 1fr;
     margin-bottom: 10px;
 }
 
@@ -21,6 +20,7 @@ form {
     display: flex;
     gap: 10px;
     width: 420px;
+    font-size: 15px;
 }
 
 .list img {
@@ -29,14 +29,39 @@ form {
 }
 
 .quantity {
+    background-color: white;
+    border: none;
     text-align: start;
+    font-size: 15px;
+}
+
+.quantity:focus {
+    outline: none;
 }
 
 .price {
+    border: none;
     text-align: end;
+    font-size: 15px;
+}
+
+.price:focus {
+    outline: none;
+}
+
+.bin {
+    background-image: url("../img/recycle-bin.png");
+    background-size: 23px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
 }
 
 table {
+    border-collapse: collapse;
     width: 100%;
     box-sizing: border-box;
     margin-top: 20px;
@@ -72,6 +97,7 @@ table th {
     height: 40px;
     border: 1px solid #000;
     font-size: 17px;
+    cursor: pointer;
     background-color: #ffffff;
 }
 
@@ -80,5 +106,14 @@ table th {
     height: 40px;
     border: 1px solid #000;
     font-size: 17px;
+    cursor: pointer;
     background-color: #2a9fffb9;
+}
+
+.button_cancel:hover{
+    background-color: #d0d0d0;
+}
+
+.button_submit:hover {
+    background-color: #388eff;
 }

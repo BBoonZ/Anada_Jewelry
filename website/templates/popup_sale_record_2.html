@@ -10,36 +10,52 @@
     <h1>สั่งซื้อ</h1>
     <form>
         <div class="list">
+            <input type="button" class="bin">
             <div class="inside_list">
                 <img src="../static/img/mock_product.png" alt="product">
-                <p>Product1</p> <!-- ชื่อสินค้า-->
+                <div>
+                    <p>Product1</p> <!-- ชื่อสินค้า-->
+                    <p>ประภท: แหวน Size: 52</p>
+                </div>
             </div>
-            <p class="quantity">1</p> <!--จำนวนสินค้า-->
-            <p class="price">฿ 100,000</p>
+            <input type="number" class="quantity" min="1" max="999" value="1" oninput="checkQuantity(this)">
+            <input type="text" class="price" value="฿ 100,000" oninput="preventRemoveSymbol(this)">
         </div>
         <div class="list">
+            <input type="button" class="bin">
             <div class="inside_list">
                 <img src="../static/img/mock_product.png" alt="product">
-                <p>Product2</p> <!-- ชื่อสินค้า-->
+                <div>
+                    <p>Product1</p> <!-- ชื่อสินค้า-->
+                    <p>ประภท: แหวน Size: 52</p>
+                </div>
             </div>
-            <p class="quantity">3</p> <!--จำนวนสินค้า-->
+            <input type="number" class="quantity" min="1" max="999" value="1" oninput="checkQuantity(this)">
+            <p class="price">฿ 40,000</p>
+        </div>
+        <div class="list">
+            <input type="button" class="bin">
+            <div class="inside_list">
+                <img src="../static/img/mock_product.png" alt="product">
+                <div>
+                    <p>Product1</p> <!-- ชื่อสินค้า-->
+                    <p>ประภท: แหวน Size: 52</p>
+                </div>
+            </div>
+            <input type="number" class="quantity" min="1" max="999" value="20" oninput="checkQuantity(this)">
             <p class="price">฿ 1,000</p>
         </div>
         <div class="list">
+            <input type="button" class="bin">
             <div class="inside_list">
                 <img src="../static/img/mock_product.png" alt="product">
-                <p>Product3</p> <!-- ชื่อสินค้า-->
+                <div>
+                    <p>Product1</p> <!-- ชื่อสินค้า-->
+                    <p>ประภท: แหวน Size: 52</p>
+                </div>
             </div>
-            <p class="quantity">100</p> <!--จำนวนสินค้า-->
+            <input type="number" class="quantity" min="1" max="999" value="100" oninput="checkQuantity(this)">
             <p class="price">฿ 1,000,000</p>
-        </div>
-        <div class="list">
-            <div class="inside_list">
-                <img src="../static/img/mock_product.png" alt="product">
-                <p>Product4</p> <!-- ชื่อสินค้า-->
-            </div>
-            <p class="quantity">20</p> <!--จำนวนสินค้า-->
-            <p class="price">฿ 40,000</p>
         </div>
     </form>
     <table>
