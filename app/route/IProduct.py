@@ -13,7 +13,7 @@ conn = sqlite3.connect('instance/Anada.db')
 cursor = conn.cursor()
 
 # สร้าง Product
-def CreateProduct(name, type, info, file_pic, stock_quantity):
+def CreateProduct(name, info, file_pic, stock_quantity, type, price):
     # เส้นทางของไฟล์ภาพที่คุณต้องการเพิ่ม
     # Construct the absolute path to the img folder
     img_folder_path = Path(__file__).resolve().parent.parent / 'img'
@@ -39,7 +39,7 @@ def CreateProduct(name, type, info, file_pic, stock_quantity):
     image_data = image_to_binary(image_path)
 
     # รันคำสั่ง INSERT เพื่อเพิ่มข้อมูลภาพ
-    cursor.execute('INSERT INTO product (name, file_pic, pic, stock_quantity) VALUES (?, ?, ?, ?)', (name, image_name, image_data, stock_quantity))
+    cursor.execute('INSERT INTO product(name, information, file_pic, pic, stock_quantity, type, price) VALUES (?, ?, ?, ?, ?, ?, ?)', (name, info, image_name, image_data, stock_quantity, type, price))
 
     # บันทึกการเปลี่ยนแปลง
     conn.commit()
@@ -49,3 +49,5 @@ def CreateProduct(name, type, info, file_pic, stock_quantity):
 
     # ปิดการเชื่อมต่อ
     conn.close()
+
+CreateProduct("hippo", "อร่อยมาก", "hippo", 4, "Earrings", "100000")

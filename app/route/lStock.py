@@ -22,8 +22,8 @@ def getProduct(product_id):
     # print(info)
     return info
 
-def getTypeProduct(type: str):
-    cursor.execute("SELECT * FROM product WHERE type = ?", (type))
+def getTypeProduct(type):
+    cursor.execute("SELECT * FROM product WHERE type = ?", (type, ))
     info = cursor.fetchall()
     return info
 
