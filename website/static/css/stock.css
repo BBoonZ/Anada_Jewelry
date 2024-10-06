@@ -172,7 +172,7 @@ header {
 /* ส่วนของปุ่มข้าง ๆ */
 .list_product {
     display: grid;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     width: 205px;
     margin: 0 20px;
     overflow: hidden;
@@ -180,32 +180,70 @@ header {
 
 .list_product button {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
     gap: 5px;
     padding: 0 5px;
     background-color: white;
-    border: none;
     cursor: pointer;
 }
 
-.button-container {
-    display: grid;
-    justify-content: center;
-    width: 200px;
-    height: 150px;
-    margin: 10px;
-    overflow: hidden;
+.all_product {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+}
+
+.ring {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+}
+
+.earring {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+}
+.bracelets {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+}
+.bangles {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+}
+.necklaces {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
+}
+
+.pendants {
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    border: none;
 }
 
 .new_item {
-    width: 100px;
-    padding: 0px 10px;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     color: black;
-    border: 2px solid black;
-    border-radius: 6px;
+    border: 1.5px solid black;
+    margin-bottom: 10px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .new_item:hover {
@@ -214,13 +252,16 @@ header {
 }
 
 .delete_item {
-    width: 100px;
-    padding: 0px 10px;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     color: black;
-    border: 2px solid black;
-    border-radius: 6px;
+    border: 1.5px solid black;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .delete_item:hover {
