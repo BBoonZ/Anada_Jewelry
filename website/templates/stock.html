@@ -26,6 +26,99 @@
         </div>
     </header>
 
+    <!-- ส่วนเนื้อหาข้างใน -->
+    <body class="content">
+        <div class="white-square">
+            <div class="list_product">
+                <button class="ring"> <img src="../static/img/ring.png" width="50px" height="40px"> แหวน Rings </button>
+                <button class="earring"> <img src="../static/img/earrings.png" width="50px" height="40px"> ต่างหู Earrings</button>
+                <button class="bracelets"> <img src="../static/img/bracelet.png" width="50px" height="40px"> สร้อยข้อมือ Bracelets</button>
+                <button class="bangles"> <img src="../static/img/bangles.png" width="50px" height="40px"> กำไล Bangles</button>
+                <button class="necklaces"> <img src="../static/img/necklace.png" width="50px" height="40px"> สร้อยคอ Necklaces</button>
+                <button class="pendants"> <img src="../static/img/pendant.png" width="50px" height="40px"> จี้ Pendants</button>
+                <div class="button-container">
+                    <button class="new_item">เพิ่มสินค้าใหม่</button>
+                    <button class="delete_item">ลบสินค้า</button>
+                </div>
+            </div>
+            
+            <div class="show_product">
+                {% for i in Avaliable %}
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="{{ url_for('img', path=i[3]) }}"></a>
+                    <h3>Name: {{ i[1] }}</h3>
+                </div>
+                {% endfor %}
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product2</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product3</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product4</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product5</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product6</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product7</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product8</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product9</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product10</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Produc11</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+
+                <div class="product_1">
+                    <a href="#" onclick="openPopup(); return false;"><img src="../static/img/mock_product.png"></a>
+                    <h3>Name: Product12</h3>
+                    <br><h3>จำนวนสินค้า : 20</h3>
+                </div>
+            </div>
+        </div>
+    </body>
+
     <script src="../static/javascript/stock.js"></script>
 </body>
 </html>
