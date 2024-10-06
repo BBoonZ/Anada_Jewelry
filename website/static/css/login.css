@@ -168,8 +168,8 @@ body {
     justify-content: center;
     align-items: end;
     padding-right: 3%;
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
     background-color: white;
     border: 1px solid black;
     box-shadow: rgba(71, 71, 71, 0.5) 1.95px 1.95px 2.6px;
@@ -185,8 +185,8 @@ body {
 
 .box_login {
     display: flexbox;
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
     padding: 20px 20px;
     background-color: white;
     border: 1px solid black;
