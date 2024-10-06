@@ -148,3 +148,157 @@ header {
     background-color: #9EDDF8;
     color: black;
 }
+/* ----------------------------------------------------------------------------- */
+/* ส่วนเนื้อหา */
+.content {
+    background-color: #D3F2FF;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* พื้นที่สีขาว */
+.white-square {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    width: 90%;
+    height: 80vh;
+    background-color: white;
+    margin: 50px 50px 0 100px;
+}
+
+/* ส่วนของปุ่มข้าง ๆ */
+.list_product {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    width: 205px;
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+.list_product button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 0 5px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button-container {
+    display: grid;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.new_item {
+    width: 100px;
+    padding: 0px 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.new_item:hover {
+    background-color: #384B70;
+    color: white;
+}
+
+.delete_item {
+    width: 100px;
+    padding: 0px 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete_item:hover {
+    background-color: #384B70;
+    color: white;
+}
+
+.show_product {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-start; /* จัดให้อยู่ทางซ้าย */
+    align-items: flex-start; /* จัดให้อยู่ด้านบน */
+    text-align: left;
+    padding: 20px 80px;
+    gap: 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.product_1 {
+    width: 350px;
+}
+
+.product_1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product_1 h3{
+    text-align: center;
+}
+
+/* ตกแต่ง scroll bar */
+.show_product::-webkit-scrollbar {
+    width: 10px; /* กำหนดความกว้างของ scrollbar */
+}
+
+.show_product::-webkit-scrollbar-track {
+    background: #E8E8E8;
+    border-radius: 10%;
+}
+
+.show_product::-webkit-scrollbar-thumb {
+    background: #9E9C9C;
+    border-radius: 10px;
+}
+
+.show_product::-webkit-scrollbar-thumb:hover {
+    background: #737070;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #384B70;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
