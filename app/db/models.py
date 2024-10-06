@@ -18,3 +18,5 @@ class Product(Base):
     file_pic = Column(String(100), index=True)
     pic = Column(LargeBinary, index=True)
     stock_quantity = Column(Integer, index=True)
+    type = Column(String, index=True)
+    price = Column(String, index=True)
