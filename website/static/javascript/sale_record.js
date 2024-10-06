@@ -12,13 +12,25 @@
 // });
 
 function openPopup() {
-    const popupWidth = 900;
-    const popupHeight = 600;
-
-    // คำนวณตำแหน่งสำหรับหน้าต่าง Popup ให้อยู่ตรงกลางหน้าจอ
-    const left = Math.max(0, (window.screen.availWidth - popupWidth) / 2);
-    const top = Math.max(0, (window.screen.availHeight - popupHeight) / 2);
-
-    // เปิดหน้าต่าง Popup
-    window.open('popup_sale_record_1.html', 'popupWindow', `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=0,scrollbars=yes`);
+    document.getElementById('popupContainer').style.display = 'block';
 }
+
+function closePopup() {
+    document.getElementById('popupContainer').style.display = 'none';
+}
+
+function openPopup2() {
+    document.getElementById('popup_cart').style.display = 'block';
+}
+
+function closePopup2() {
+    document.getElementById('popup_cart').style.display = 'none';
+}
+
+document.querySelector('.button_sale_record').addEventListener('click', function() {
+    window.location.href = 'sale_record.html';
+});
+
+document.querySelector('.dropdown_Stock_class').addEventListener('click', function() {
+    window.location.href = 'stock.html';
+});

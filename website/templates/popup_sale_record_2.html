@@ -7,24 +7,59 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content_2">
-        <div class="left_content">
-            <button id="edit_button"> Edit </button>
-            <img src="../static/img/mock_product.png" alt="img_product">
-        </div>
-
-        <div class="right_content">
-            <h1>Name: Product</h1>
-            <span class="detail_product">รายละเอียดสินค้า</span>
-            <p>ประเภทสินค้า: แหวน</p>
-            <p>Size: 52</p>
-            <p>ราคา: 100,000 BAHT</p>
-            <p>จำนวน: 1 ชิ้น</p>
-            <div class="both_button">
-                <button class="button_cancel" id="cancel_button">Cancel</button>
-                <button class="button_submit" id="submit_button">Submit</button>
+    <h1>สั่งซื้อ</h1>
+    <form>
+        <div class="list">
+            <div class="inside_list">
+                <img src="../static/img/mock_product.png" alt="product">
+                <p>Product1</p> <!-- ชื่อสินค้า-->
             </div>
+            <p class="quantity">1</p> <!--จำนวนสินค้า-->
+            <p class="price">฿ 100,000</p>
         </div>
+        <div class="list">
+            <div class="inside_list">
+                <img src="../static/img/mock_product.png" alt="product">
+                <p>Product2</p> <!-- ชื่อสินค้า-->
+            </div>
+            <p class="quantity">3</p> <!--จำนวนสินค้า-->
+            <p class="price">฿ 1,000</p>
+        </div>
+        <div class="list">
+            <div class="inside_list">
+                <img src="../static/img/mock_product.png" alt="product">
+                <p>Product3</p> <!-- ชื่อสินค้า-->
+            </div>
+            <p class="quantity">100</p> <!--จำนวนสินค้า-->
+            <p class="price">฿ 1,000,000</p>
+        </div>
+        <div class="list">
+            <div class="inside_list">
+                <img src="../static/img/mock_product.png" alt="product">
+                <p>Product4</p> <!-- ชื่อสินค้า-->
+            </div>
+            <p class="quantity">20</p> <!--จำนวนสินค้า-->
+            <p class="price">฿ 40,000</p>
+        </div>
+    </form>
+    <table>
+        <thead>
+            <th>ข้อมูลสั่งซื้อ</th>
+        </thead>
+        <body>
+            <tr class="price_result">
+                <td>
+                    ราคาสุทธิที่ต้องชำระ
+                </td>
+                <td>
+                    ฿ 1,141,000
+                </td>
+            </tr>
+        </body>
+    </table>
+    <div class="both_button">
+        <button class="button_cancel" onclick="goBackToMainPage()">Cancel</button>
+        <button class="button_submit" onclick="goBackToMainPage()">Submit</button>
     </div>
     <script src="../static/javascript/popup_sale_record_2.js"></script>
 </body>

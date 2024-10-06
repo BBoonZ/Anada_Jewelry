@@ -27,13 +27,27 @@ header {
     color: white;
 }
 
+.cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+.cart_img {
+    width: 100%;
+    height: auto;
+}
+
 .login {
     display: flex;
     align-items: center;
     margin-left: auto;
 }
 
-.login a {
+.inside_login {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -46,7 +60,7 @@ header {
     color: white;
 }
 
-.login img {
+.login_img{
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -208,36 +222,11 @@ header {
 
 .product_1 img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product_1 h3{
-    text-align: center;
-}
-
-.product_2 {
-    width: 350px;
-}
-
-.product_2 img {
-    width: 100%;
-    height: auto;
-}
-
-.product_2 h3{
-    text-align: center;
-}
-
-.product_3 {
-    width: 350px;
-}
-
-.product_3 img {
-    width: 100%;
-    height: auto;
-}
-
-.product_3 h3{
     text-align: center;
 }
 
@@ -258,4 +247,33 @@ header {
 
 .show_product::-webkit-scrollbar-thumb:hover {
     background: #737070;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #384B70;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
 }
