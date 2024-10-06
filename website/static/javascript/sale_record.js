@@ -11,8 +11,11 @@
 //     }
 // });
 
-function openPopup() {
+function openPopup(url) {
     document.getElementById('popupContainer').style.display = 'block';
+    var iframe = document.getElementById('contentIframe');
+    iframe.src = url;  // Set the iframe's src to the clicked link's href
+    console.log(url)
 }
 
 function closePopup() {

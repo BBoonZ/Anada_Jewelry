@@ -16,7 +16,13 @@ def getAvailable():
     # print(info)
     return info
 
-def getTypeProduct(type):
+def getProduct(product_id):
+    cursor.execute("SELECT * FROM product WHERE id = ?", (product_id))
+    info = cursor.fetchall()[0]
+    # print(info)
+    return info
+
+def getTypeProduct(type: str):
     cursor.execute("SELECT * FROM product WHERE type = ?", (type))
     info = cursor.fetchall()
     return info
@@ -41,4 +47,5 @@ def IncreaseProduct(product_id, num=1):
     print("IncreaseSuccess")
 
 # DecreaseProduct([6])
-IncreaseProduct("6")
+# IncreaseProduct("6")
+# getProduct("7")

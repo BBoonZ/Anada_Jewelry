@@ -9,15 +9,17 @@
 <body>
     <div class="content_1">
         <div class="picture_product">
-            <img src="../static/img/mock_product.png" alt="img_product">
+            <img src="{{ url_for('img', path=Product[3]) }}" alt="img_product">
         </div>
 
         <div class="detail">
             <h1>Name: Product</h1>
             <p class="details">รายละเอียดสินค้า</p>
+            <h2>ชื่อสินค้า: {{ Product[1] }}</h2>
             <h2>ประเภทสินค้า: แหวน</h2>
-            <h2>Size</h2>
-            <input class="size" type="text" required>
+            <h2>ข้อมูลสินค้า: {{ Product[2] }}</h2>
+            <!-- <h2>Size</h2>
+            <input class="size" type="text" required> -->
             <h2>ราคา</h2>
             <div class="price">
                 <input type="text" required>
