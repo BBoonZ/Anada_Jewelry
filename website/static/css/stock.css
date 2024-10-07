@@ -452,72 +452,14 @@ select {
 }
 
 
-/*  slider  */
-.slider-container {
-    position: relative;
-    width: 300px;
-    display: inline-block;
-}
 
-input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 4px;
-    background: #ddd;
-    outline: none;
-    border-radius: 5px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #000;
-    cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #000;
-    cursor: pointer;
-}
-
-.slider-labels {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 20px;
-    width: 100%;
-}
-
-.slider-labels span {
-    font-size: 14px;
-}
-
-.circle {
-    width: 8px;
-    height: 8px;
-    background-color: black;
-    border-radius: 50%;
-}
-
-.slider-value{
-    margin-left: 30px;
-}
-
-/* slider  */
 
 .downright-item{
     margin-bottom: 10px;
 }
 
 .downright-item-price{
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .new-submit-button{
