@@ -12,7 +12,7 @@ document.querySelector('.dropdown_Stock_class').addEventListener('click', functi
 let newItem = document.getElementById("new_item");
 let newProduct = document.getElementById("newProductPopup");
 let overlay = document.getElementById("overlay");
-let cancelButton = document.getElementById("cancelButton");
+let cancelButton = document.getElementById("newCancelButton");
 
 newItem.addEventListener("click", function(){
     newProduct.style.display = 'block';
@@ -37,3 +37,55 @@ document.getElementById('fileInput').addEventListener('change', function() {
         console.log('No file selected');
     }
 });
+
+// Edit สินค่้า popup
+
+// ตั้งค่า default ของประเภทสินค้า
+document.getElementById("product-type").value = "option4"; 
+
+// เพิ่มลดจำนวน
+
+function decrement() {
+    var input = document.getElementById('quantity');
+    var value = parseInt(input.value);
+    if (value > 1) {
+        input.value = value - 1;
+    }
+}
+
+function increment() {
+    var input = document.getElementById('quantity');
+    var value = parseInt(input.value);
+    input.value = value + 1;
+}
+
+// เปิด edit popup
+function openEdit(){
+    let editPopup = document.getElementById("edit-popup");
+    editPopup.style.display = "block";
+    overlay.style.display = "block";
+}
+
+// ปิดหน้าต่าง edit popup
+document.getElementById("edit-cancel-button").addEventListener("click", function(){
+    document.getElementById("edit-popup").style.display = 'none';
+    overlay.style.display = 'none';
+})
+
+
+// เปิดหน้าเลือกไฟล์ของ edit popup
+document.getElementById('change-picture-button').addEventListener('click', function() {
+    document.getElementById('editFileInput').click();
+});
+
+// เมื่อมีการเลือกไฟล์ แสดงชื่อไฟล์ที่เลือกใน console
+document.getElementById('editFileInput').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+        console.log('File selected: ' + file.name);
+    } else {
+        console.log('No file selected');
+    }
+});
+
+

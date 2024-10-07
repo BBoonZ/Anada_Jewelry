@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anada Jewellery</title>
     <link rel="stylesheet" href="../static/css/stock.css">
+    
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
@@ -44,67 +45,67 @@
             
             <div class="show_product">
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product2</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product3</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product4</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product5</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product6</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product7</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product8</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product9</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product10</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Produc11</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
 
                 <div class="product_1">
-                    <a href="#"><img src="../static/img/mock_product.png"></a>
+                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product12</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
@@ -115,7 +116,7 @@
         <div class="new-product" id="newProductPopup">
             <div class="new-product-layout">
                 <div class="new-topleft">
-                    <button class="cancel-button" id="cancelButton"> Cancel </button>
+                    <button class="cancel-button" id="newCancelButton"> Cancel </button>
                 </div>
                 <div class="new-topright">
                     <h2 style="margin: 20px 0px 10px 0px;"> ชื่อสินค้า </h2>
@@ -166,7 +167,68 @@
                 </div>
             </div>
         </div>
-    </body>
+        </div>
+
+        <!-- หน้าต่าง edit popup -->
+    <div class="edit-popup" id="edit-popup">
+        <div class="edit-layout">
+            <input type="file" id="editFileInput" style="display: none;">
+            <div class="top">
+                <button class="cancel-button" id="edit-cancel-button"> Cancel </button>
+            </div>
+            <div class="left">
+                <img src="#" alt="" class="edit-product-picture">
+                <button class="change-picture-button" id = "change-picture-button"> Change Picture</button>
+            </div>
+            <div class="right">
+                <div class="right-layout">
+                    <div class="margin-inright">
+                        <Label for="product-name"> Name: </Label>
+                        <input type="text" class="input-text" value="เปลี่ยนชื่อตรงนี้" id="product-name">
+                    </div>
+
+                    <div class="margin-inright">
+                        <p style="font-size: 16px; margin: 0; color: rgb(148, 147, 147);"> รายละเอียดสินค้า</p>
+                    </div>
+
+                    <div class="margin-inright">
+                        <Label for="product-type"> ประเภทสินค้า </Label>
+                        <select style="padding: 5px 15px 5px 15px;" id="product-type">
+                            <option value="option1">แหวน</option>
+                            <option value="option2">ต่างหู</option>
+                            <option value="option3">สร้อยข้อมือ</option>
+                            <option value="option4">กำไล</option>
+                            <option value="option5">สร้อยคอ</option>
+                            <option value="option6">จี้</option>
+                        </select>
+                    </div>
+
+                    <div class="margin-inright">
+                        <Label for="product-cost"> ต้นทุน: </Label>
+                        <input type="text" class="input-text" value="เปลี่ยนต้นทุนตรงนี้" id="product-cost">
+                    </div>
+
+                    <div class="margin-inright">
+                        <Label for="product-price"> ราคาขาย: </Label>
+                        <input type="text" class="input-text" value="เปลี่ยนราคาขายตรงนี้" id="product-price">
+                    </div>
+
+                    <div class="margin-inright">
+                        <p> จำนวน </p>
+                        <div class="quantity-container">
+                            <button class="quantity-button" onclick="decrement()">-</button>
+                            <input type="text" id="quantity" class="quantity-input" value="20">
+                            <button class="quantity-button" onclick="increment()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="margin-inright">
+                        <button class="edit-submit-button"> Submit </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
     <script src="../static/javascript/stock.js"></script>
 </body>
