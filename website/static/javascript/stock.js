@@ -23,3 +23,17 @@ cancelButton.addEventListener("click", function(){
     newProduct.style.display = 'none';
     overlay.style.display = 'none';
 })
+
+document.getElementById('add-picture-button').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+});
+
+// เมื่อมีการเลือกไฟล์ แสดงชื่อไฟล์ที่เลือกใน console
+document.getElementById('fileInput').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+        console.log('File selected: ' + file.name);
+    } else {
+        console.log('No file selected');
+    }
+});
