@@ -22,18 +22,21 @@ function closePopup() {
     document.getElementById('popupContainer').style.display = 'none';
 }
 
-function openPopup2() {
+function openPopup2(url) {
     document.getElementById('popup_cart').style.display = 'block';
+    var iframe = document.getElementById('contentIframe2');
+    iframe.src = url;  // Set the iframe's src to the clicked link's href
+    console.log(url)
 }
 
 function closePopup2() {
     document.getElementById('popup_cart').style.display = 'none';
 }
 
-document.querySelector('.button_sale_record').addEventListener('click', function() {
-    window.location.href = 'sale_record.html';
-});
+// document.querySelector('.button_sale_record').addEventListener('click', function() {
+//     window.location.href = '/home';
+// });
 
-document.querySelector('.dropdown_Stock_class').addEventListener('click', function() {
-    window.location.href = 'stock.html';
-});
+// document.querySelector('.dropdown_Stock_class').addEventListener('click', function() {
+//     window.location.href = 'stock.html';
+// });

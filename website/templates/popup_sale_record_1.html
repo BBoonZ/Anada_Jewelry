@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/popup_sale_record_1.css">
+    <link rel="stylesheet" href="/static/css/popup_sale_record_1.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="content_1">
         <div class="picture_product">
             <img src="{{ url_for('img', path=Product[3]) }}" alt="img_product">
         </div>
 
-        <div class="detail">
-            <h1>Name: Product</h1>
-            <p class="details">รายละเอียดสินค้า</p>
-            <h2>ชื่อสินค้า: {{ Product[1] }}</h2>
-            <h2>ประเภทสินค้า: แหวน</h2>
-            <h2>ข้อมูลสินค้า: {{ Product[2] }}</h2>
-            <!-- <h2>Size</h2>
+        <form action="/saveRecord/" method="post">
+            <div class="detail">
+                <input type="hidden" id="product_id" name="id" value="{{ Product[0] }}">
+
+                <h1>Name: {{ Product[1] }}</h1>
+                <p class="details">รายละเอียดสินค้า</p>
+                <h2>ประเภทสินค้า: {{ Product[6] }}</h2>
+                <h2>ข้อมูลสินค้า: {{ Product[2] }}</h2>
+                <!-- <h2>Size</h2>
             <input class="size" type="text" required> -->
-            <h2>ราคา</h2>
-            <div class="price">
-                <input type="text" required>
-                <p>BAHT</p>
+                <h2>ราคา</h2>
+                <div class="price">
+                    <input type="text" name="price" required>
+                    <p>BAHT</p>
+                </div>
+                <h2>จำนวน</h2>
+                <div class="counter-container">
+                    <button type="button" id="decrement">-</button>
+                    <input type="number" id="counter" name="value" value="1">
+                    <button type="button" id="increment">+</button>
+                </div>
+                <div class="Allbutton">
+                    <button type="button" class="button_cancel1" onclick="goBackToMainPage()">Cancel</button>
+                    <button type="submit" class="button_submit1" onclick="goBackToMainPage()">Submit</button>
+                </div>
             </div>
-            <h2>จำนวน</h2>
-            <div class="counter-container">
-                <button id="decrement">-</button>
-                <input type="number" id="counter" value="1">
-                <button id="increment">+</button>
-            </div>
-            <div class="Allbutton">
-                <button class="button_cancel1" onclick="goBackToMainPage()">Cancel</button>
-                <button class="button_submit1" onclick="goBackToMainPage()">Submit</button>
-            </div>
-        </div>
+        </form>
     </div>
-    <script src="../static/javascript/popup_sale_record_1.js"></script>
+    <script src="/static/javascript/popup_sale_record_1.js"></script>
 </body>
+
 </html>

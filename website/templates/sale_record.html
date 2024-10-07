@@ -17,13 +17,13 @@
                         <img src="../static/img/person_5.png" alt="logo" class="login_img">
                         <p>เข้าสู่ระบบ</p>
                     </a>
-                    <a href="#" class="cart" onclick="openPopup2(); return false;">
+                    <a href="/cart" class="cart" onclick="openPopup2(this.href); return false;">
                         <img src="../static/img/shopping-cart.png" alt="shopping_cart" class="cart_img">
                     </a>
                 </div>
             </div>
             <div class="menu">
-                <a id="button_sale_record_id" class="button_sale_record" >Sale Record</a>
+                <a href="/recordsales/none" id="button_sale_record_id" class="button_sale_record" >Sale Record</a>
                 <a id="dropdown_Stock_id" class="dropdown_Stock_class" >Stock</a>
             </div>
         </div>
@@ -31,25 +31,25 @@
 
     <!-- ใช้เปิด popup -->
     <div id="popup_cart" class="popup" style="display:none;">
-        <iframe src="popup_sale_record_2.html" width="900" height="600"></iframe>
+        <iframe id="contentIframe2" width="900" height="600"></iframe>
     </div>
 
     <!-- ส่วนเนื้อหาข้างใน -->
     <body class="content">
         <div class="white-square">
             <div class="list_product">
-                <button class="all_product"> <img src="../static/img/all.png" width="40px" height="40px">สินค้าทั้งหมด</button>
-                <button class="ring"> <img src="../static/img/ring.png" width="50px" height="50px">แหวน</button>
-                <button class="earring"> <img src="../static/img/earrings.png" width="50px" height="50px">ต่างหู</button>
-                <button class="bracelets"> <img src="../static/img/bracelet.png" width="50px" height="50px">สร้อยข้อมือ</button>
-                <button class="bangles"> <img src="../static/img/bangles.png" width="50px" height="50px">กำไล</button>
-                <button class="necklaces"> <img src="../static/img/necklace.png" width="50px" height="50px">สร้อยคอ</button>
-                <button class="pendants"> <img src="../static/img/pendant.png" width="50px" height="50px">จี้</button>
+                <button class="all_product" onclick="window.location.href='/recordsales/none';"> <img src="../static/img/all.png" width="40px" height="40px">สินค้าทั้งหมด</button>
+                <button class="ring" onclick="window.location.href='/recordsales/ring';"> <img src="../static/img/ring.png" width="50px" height="50px">แหวน</button>
+                <button class="earring" onclick="window.location.href='/recordsales/earring';"> <img src="../static/img/earrings.png" width="50px" height="50px">ต่างหู</button>
+                <button class="bracelets" onclick="window.location.href='/recordsales/bracelets';"> <img src="../static/img/bracelet.png" width="50px" height="50px">สร้อยข้อมือ</button>
+                <button class="bangles" onclick="window.location.href='/recordsales/bangles';"> <img src="../static/img/bangles.png" width="50px" height="50px">กำไล</button>
+                <button class="necklaces" onclick="window.location.href='/recordsales/necklaces';"> <img src="../static/img/necklace.png" width="50px" height="50px">สร้อยคอ</button>
+                <button class="pendants" onclick="window.location.href='/recordsales/pendants';"> <img src="../static/img/pendant.png" width="50px" height="50px">จี้</button>
             </div>
             <div class="show_product">
                 {% for i in Available %}
                 <div class="product_1">
-                    <a href="/recordsales/{{ i[0] }}" onclick="openPopup(this.href); return false;"><img src="{{ url_for('img', path=i[3]) }}"></a>
+                    <a href="/recordsales/product/{{ i[0] }}" onclick="openPopup(this.href); return false;"><img src="{{ url_for('img', path=i[3]) }}"></a>
                     <h3>Name: {{ i[1] }}</h3>
                 </div>
                 {% endfor %}

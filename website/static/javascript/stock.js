@@ -1,5 +1,5 @@
 document.querySelector('.button_sale_record').addEventListener('click', function() {
-    window.location.href = 'sale_record.html';
+    window.location.href = '/recordsales/none';
 });
 
 document.querySelector('.dropdown_Stock_class').addEventListener('click', function() {

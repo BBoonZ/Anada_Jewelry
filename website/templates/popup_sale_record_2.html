@@ -1,82 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/popup_sale_record_2.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>สั่งซื้อ</h1>
     <form>
+        {% for i in Product %}
         <div class="list">
-            <input type="button" class="bin">
+            <input type="button" class="bin" onclick="window.location.href='/cart/delete/{{ i[6] }}'">
             <div class="inside_list">
-                <img src="../static/img/mock_product.png" alt="product">
+                <img src="{{ url_for('img', path=i[3]) }}" alt="product">
                 <div>
-                    <p>Product1</p> <!-- ชื่อสินค้า-->
-                    <p>ประภท: แหวน Size: 52</p>
+                    <p>Name : {{ i[1] }}</p> <!-- ชื่อสินค้า-->
+                    <p>Type: {{ i[4] }}</p>
+                    <p>Details: {{ i[2] }}</p>
                 </div>
             </div>
-            <input type="number" class="quantity" min="1" max="999" value="1" oninput="checkQuantity(this)">
-            <input type="text" class="price" value="฿ 100,000" oninput="preventRemoveSymbol(this)">
+            <input type="number" class="quantity" min="1" max="999" value="{{ i[6] }}" oninput="checkQuantity(this)">
+            <input type="text" class="price" value="฿ {{ i[5] }}" oninput="preventRemoveSymbol(this)">
         </div>
-        <div class="list">
-            <input type="button" class="bin">
-            <div class="inside_list">
-                <img src="../static/img/mock_product.png" alt="product">
-                <div>
-                    <p>Product1</p> <!-- ชื่อสินค้า-->
-                    <p>ประภท: แหวน Size: 52</p>
-                </div>
-            </div>
-            <input type="number" class="quantity" min="1" max="999" value="1" oninput="checkQuantity(this)">
-            <p class="price">฿ 40,000</p>
-        </div>
-        <div class="list">
-            <input type="button" class="bin">
-            <div class="inside_list">
-                <img src="../static/img/mock_product.png" alt="product">
-                <div>
-                    <p>Product1</p> <!-- ชื่อสินค้า-->
-                    <p>ประภท: แหวน Size: 52</p>
-                </div>
-            </div>
-            <input type="number" class="quantity" min="1" max="999" value="20" oninput="checkQuantity(this)">
-            <p class="price">฿ 1,000</p>
-        </div>
-        <div class="list">
-            <input type="button" class="bin">
-            <div class="inside_list">
-                <img src="../static/img/mock_product.png" alt="product">
-                <div>
-                    <p>Product1</p> <!-- ชื่อสินค้า-->
-                    <p>ประภท: แหวน Size: 52</p>
-                </div>
-            </div>
-            <input type="number" class="quantity" min="1" max="999" value="100" oninput="checkQuantity(this)">
-            <p class="price">฿ 1,000,000</p>
-        </div>
+        {% endfor %}
     </form>
     <table>
         <thead>
             <th>ข้อมูลสั่งซื้อ</th>
         </thead>
+
         <body>
             <tr class="price_result">
                 <td>
                     ราคาสุทธิที่ต้องชำระ
                 </td>
                 <td>
-                    ฿ 1,141,000
+                    ฿ {{ All_price }}
                 </td>
             </tr>
         </body>
     </table>
-    <div class="both_button">
-        <button class="button_cancel" onclick="goBackToMainPage()">Cancel</button>
-        <button class="button_submit" onclick="goBackToMainPage()">Submit</button>
-    </div>
+    <form action="" method="post">
+        <div class="both_button">
+            <button class="button_cancel" onclick="goBackToMainPage()">Cancel</button>
+            <button type="submit" class="button_submit" onclick="goBackToMainPage()">Submit</button>
+        </div>
+    </form>
     <script src="../static/javascript/popup_sale_record_2.js"></script>
 </body>
+
 </html>
