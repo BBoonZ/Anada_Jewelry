@@ -44,69 +44,16 @@
             </div>
             
             <div class="show_product">
+                {% for i in All %}
+                <div class="product_1">
+                    <a href="/stock/{{ i[0] }}" onclick="openEdit(this.href); return false;"><img src="{{ url_for('img', path=i[3]) }}" ></a>
+                    <br><h3>จำนวนสินค้า: {{ i[5] }}</h3>
+                </div>
+                {% endfor %}
+
                 <div class="product_1">
                     <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
                     <h3>Name: Product2</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product3</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product4</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product5</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product6</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product7</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product8</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product9</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product10</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Produc11</h3>
-                    <br><h3>จำนวนสินค้า : 20</h3>
-                </div>
-
-                <div class="product_1">
-                    <a onclick=openEdit()><img src="../static/img/mock_product.png"></a>
-                    <h3>Name: Product12</h3>
                     <br><h3>จำนวนสินค้า : 20</h3>
                 </div>
             </div>

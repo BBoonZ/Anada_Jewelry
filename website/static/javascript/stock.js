@@ -60,10 +60,12 @@ function increment() {
 }
 
 // เปิด edit popup
-function openEdit(){
+function openEdit(url){
     let editPopup = document.getElementById("edit-popup");
     editPopup.style.display = "block";
     overlay.style.display = "block";
+    // url
+    editPopup.src = url;
 }
 
 // ปิดหน้าต่าง edit popup

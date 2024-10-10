@@ -24,7 +24,7 @@
             </div>
             <div class="menu">
                 <a href="/recordsales/none" id="button_sale_record_id" class="button_sale_record" >Sale Record</a>
-                <a id="dropdown_Stock_id" class="dropdown_Stock_class" >Stock</a>
+                <a href="/stock" id="dropdown_Stock_id" class="dropdown_Stock_class" >Stock</a>
             </div>
         </div>
     </header>
@@ -49,7 +49,7 @@
             <div class="show_product">
                 {% for i in Available %}
                 <div class="product_1">
-                    <a href="/recordsales/product/{{ i[0] }}" onclick="openPopup(this.href); return false;"><img src="{{ url_for('img', path=i[3]) }}"></a>
+                    <a href="/recordsales/product/{{ i[0] }}" onclick="openPopup(this.href); return false;"><img src="{{ url_for('img', path=i[3]) }}" ></a>
                     <h3>Name: {{ i[1] }}</h3>
                 </div>
                 {% endfor %}
