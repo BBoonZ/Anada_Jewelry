@@ -67,10 +67,10 @@ function openEdit(){
 }
 
 // ปิดหน้าต่าง edit popup
-document.getElementById("edit-cancel-button").addEventListener("click", function(){
+function closeEdit(){
     document.getElementById("edit-popup").style.display = 'none';
     overlay.style.display = 'none';
-})
+}
 
 
 // เปิดหน้าเลือกไฟล์ของ edit popup
