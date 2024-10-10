@@ -561,12 +561,25 @@ h2{
 
 .edit-submit-button{
     margin-top: 15px;
-    padding: 12px 42px 12px 42px;
-    background-color: white;
+    padding: 12px 30px 12px 30px;
+    background-color: rgb(72, 173, 255);
     border: 1px solid black;
+    border-radius: 5px;
 }
 
 .edit-submit-button:hover{
+    background-color: rgb(23, 142, 239);
+}
+
+.edit-cancel-button{
+    margin-top: 15px;
+    padding: 12px 30px 12px 30px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.edit-cancel-button:hover{
     background-color: rgb(181, 181, 181);
 }
 
