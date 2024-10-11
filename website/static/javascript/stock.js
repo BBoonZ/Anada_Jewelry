@@ -6,88 +6,26 @@ document.querySelector('.dropdown_Stock_class').addEventListener('click', functi
     window.location.href = 'stock.html';
 });
 
-// เพิ่มสินค้าใหม่ popup
+function openCreate(url){
+    document.getElementById('createContainer').style.display = 'block';
+    var iframe = document.getElementById('createIframe');
+    iframe.src = url;  // Set the iframe's src to the clicked link's href
+    console.log(url)
+}
 
-
-let newItem = document.getElementById("new_item");
-let newProduct = document.getElementById("newProductPopup");
-let overlay = document.getElementById("overlay");
-let cancelButton = document.getElementById("newCancelButton");
-
+// เปิดหน้าต่าง Create สินค้าใหม่ แก้การทำงานได้เลย
 newItem.addEventListener("click", function(){
-    newProduct.style.display = 'block';
-    overlay.style.display = 'block';
-})
-
-cancelButton.addEventListener("click", function(){
-    newProduct.style.display = 'none';
-    overlay.style.display = 'none';
-})
-
-document.getElementById('add-picture-button').addEventListener('click', function() {
-    document.getElementById('fileInput').click();
+    // newProduct.style.display = 'block';
+    // overlay.style.display = 'block';
 });
 
-// เมื่อมีการเลือกไฟล์ แสดงชื่อไฟล์ที่เลือกใน console
-document.getElementById('fileInput').addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-        console.log('File selected: ' + file.name);
-    } else {
-        console.log('No file selected');
-    }
-});
-
-// Edit สินค่้า popup
-
-// ตั้งค่า default ของประเภทสินค้า
-document.getElementById("product-type").value = "option4"; 
-
-// เพิ่มลดจำนวน
-
-function decrement() {
-    var input = document.getElementById('quantity');
-    var value = parseInt(input.value);
-    if (value > 1) {
-        input.value = value - 1;
-    }
-}
-
-function increment() {
-    var input = document.getElementById('quantity');
-    var value = parseInt(input.value);
-    input.value = value + 1;
-}
-
-// เปิด edit popup
+// เปิดหน้าต่าง Edit สินค้าต่างๆ
 function openEdit(url){
-    let editPopup = document.getElementById("edit-popup");
-    editPopup.style.display = "block";
-    overlay.style.display = "block";
-    // url
-    editPopup.src = url;
-}
-
-// ปิดหน้าต่าง edit popup
-function closeEdit(){
-    document.getElementById("edit-popup").style.display = 'none';
-    overlay.style.display = 'none';
-}
-
-
-// เปิดหน้าเลือกไฟล์ของ edit popup
-document.getElementById('change-picture-button').addEventListener('click', function() {
-    document.getElementById('editFileInput').click();
-});
-
-// เมื่อมีการเลือกไฟล์ แสดงชื่อไฟล์ที่เลือกใน console
-document.getElementById('editFileInput').addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-        console.log('File selected: ' + file.name);
-    } else {
-        console.log('No file selected');
-    }
-});
+    // let editPopup = document.getElementById("edit-popup");
+    // editPopup.style.display = "block";
+    // overlay.style.display = "block";
+    // // url
+    // editPopup.src = url;
+};
 
 
