@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, Form
+from fastapi import APIRouter, Request, Form, File, UploadFile
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
@@ -6,6 +6,7 @@ from .IRecordSales import RecordManager
 from .Stock import ProductManager
 from .ICreateProduct import ICreateProduct
 from .IDeleteProduct import DeleteProduct
+from .UploadFile import UploadRoute
 
 class StockRouter:
     def __init__(self):
@@ -14,6 +15,7 @@ class StockRouter:
         self.IStock = ProductManager()
         self.ICreate = ICreateProduct()
         self.IDelete = DeleteProduct()
+        self.Upload = UploadRoute()
         BASE_DIR = Path(__file__).resolve().parent.parent.parent  # Navigate up three levels to the project root
         self.templates = Jinja2Templates(directory=str(BASE_DIR / "website" / "templates"))
 
@@ -42,8 +44,10 @@ class StockRouter:
     async def create_product(self, request: Request):
         return self.templates.TemplateResponse("popup_create.html", {"request": request})
 
-    async def summit_create_product(self, name: str = Form(), info: str = Form(), pic: str = Form(), type: str = Form(), price: str = Form(), value: str = Form()):
-        self.ICreate.create_product(name, info, pic, value, type, price)
+    async def summit_create_product(self, name= Form(), info = Form(), file: UploadFile = File(), price = Form(), value = Form()):
+        await self.Upload.upload_file(file)
+        print(name, info, file.filename, value, type, price)
+        # self.ICreate.create_product(name, info, pic, value, type, price)
         return None
 
     async def delete_product(self, product_id):

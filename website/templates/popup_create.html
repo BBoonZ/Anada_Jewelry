@@ -10,21 +10,23 @@
 
 <body>
     <!--  pop up เพิ่มสินค้าใหม่ -->
-    <form action="/stock/create/submit" method="post"></form>
-    <div class="new-product" id="newProductPopup">
-        <div class="new-product-layout">
-            <div class="new-topleft">
-                <button class="cancel-button" id="newCancelButton"> Cancel </button>
-            </div>
-            <div class="new-topright">
-                <h2 style="margin: 20px 0px 10px 0px;"> ชื่อสินค้า </h2>
-                <input type="text" class="input-text" name="name">
-            </div>
-            
+    <form action="/stock/create/submit" method="post" enctype="multipart/form-data">
+        <div class="new-product" id="newProductPopup">
+            <div class="new-product-layout">
+                <div class="new-topleft">
+                    <button class="cancel-button" id="newCancelButton"> Cancel </button>
+                </div>
+                <div class="new-topright">
+                    <h2 style="margin: 20px 0px 10px 0px;"> ชื่อสินค้า </h2>
+                    <input type="text" class="input-text" name="name">
+                </div>
+
                 <div class="new-downleft">
-                    <img src="/app/img/hippo.jpg" alt="" class="new-image">
-                    <button class="add-picture-button" id="add-picture-button"> Add Picture </button>
-                    <input type="file" id="fileInput" style="display: none;">
+                    <!-- <img src="/app/img/hippo.jpg" alt="" class="new-image"> -->
+
+                    <button type="button" class="add-picture-button" id="add-picture-button"> Add Picture </button>
+                    <input type="file" name="file" id="fileInput" style="display: none;" accept="image/png, image/jpeg">
+                    <img id="imagePreview" class="new-image" alt="Image Preview">
                 </div>
                 <div class="new-downright">
                     <div class="downright-item">
@@ -64,11 +66,10 @@
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-
+    </form>
     </div>
-    <script src="/static/javascript/popup_create.js"></script>
+    </div>
+    <script src="/js/popup_create.js"></script>
 </body>
 
 </html>
