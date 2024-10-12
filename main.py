@@ -9,7 +9,7 @@ from app.route.UploadFile import UploadRoute
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="website/static"), name="static")   # Locate css file
+app.mount("/static", StaticFiles(directory="website/static/css"), name="static")   # Locate css file
 app.mount("/js", StaticFiles(directory="website/static/javascript"), name="script")   # Locate js file
 app.mount("/img", StaticFiles(directory="app/img"), name="img")                    # Locate img Product file
 

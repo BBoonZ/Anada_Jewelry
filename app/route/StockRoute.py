@@ -46,8 +46,8 @@ class StockRouter:
 
     async def summit_create_product(self, name= Form(), info = Form(), file: UploadFile = File(), price = Form(), value = Form()):
         await self.Upload.upload_file(file)
-        print(name, info, file.filename, value, type, price)
-        # self.ICreate.create_product(name, info, pic, value, type, price)
+        # print(name, info, file.filename, value, type, price)
+        await self.ICreate.create_product(name, info, file.filename, value, "2", price)
         return None
 
     async def delete_product(self, product_id):

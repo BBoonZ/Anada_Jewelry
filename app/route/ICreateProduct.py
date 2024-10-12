@@ -11,30 +11,31 @@ class ICreateProduct:
         with open(image_path, 'rb') as file:
             return file.read()
 
-    def create_product(self, name, info, file_pic, stock_quantity, product_type, price):
+    async def create_product(self, name, info, file_pic, stock_quantity, product_type, price):
         """Insert a new product with an image into the database."""
         # Construct the absolute path to the img folder
-        img_folder_path = Path(__file__).resolve().parent.parent / 'img'
+        image_path = Path(__file__).resolve().parent.parent / 'img' / f'{file_pic}'
         image_name = file_pic
 
-        image_path_jpg = img_folder_path / f'{image_name}.jpg'
-        image_path_jpeg = img_folder_path / f'{image_name}.jpeg'
-        image_path_png = img_folder_path / f'{image_name}.png'
+        # image_path_jpg = img_folder_path / f'{image_name}.jpg'
+        # image_path_jpeg = img_folder_path / f'{image_name}.jpeg'
+        # image_path_png = img_folder_path / f'{image_name}.png'
 
-        if image_path_jpg.exists():
-            image_path = image_path_jpg
-            image_name = f'{image_name}.jpg'
-        elif image_path_jpeg.exists():
-            image_path = image_path_jpeg
-            image_name = f'{image_name}.jpeg'
-        elif image_path_png.exists():
-            image_path = image_path_png
-            image_name = f'{image_name}.png'
-        else:
-            raise FileNotFoundError("Image not found in .jpg, .jpeg, or .png formats")
+        # if image_path_jpg.exists():
+        #     image_path = image_path_jpg
+        #     image_name = f'{image_name}.jpg'
+        # elif image_path_jpeg.exists():
+        #     image_path = image_path_jpeg
+        #     image_name = f'{image_name}.jpeg'
+        # elif image_path_png.exists():
+        #     image_path = image_path_png
+        #     image_name = f'{image_name}.png'
+        # else:
+        #     raise FileNotFoundError("Image not found in .jpg, .jpeg, or .png formats")
 
-        # Convert the image to binary
+        # # Convert the image to binary
         image_data = self.image_to_binary(image_path)
+        # image_data = self.image_to_binary(image_name.split(".")[0])
 
         # Insert the product into the database
         self.cursor.execute(
