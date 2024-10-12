@@ -55,6 +55,9 @@ class ProductManager:
         self.conn.commit()
         print("IncreaseSuccess")
 
+    def setProduct(self, id, name, type, detail, price, stock):
+        self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? WHERE id = ?", (name, detail, stock, type, price, id))
+        self.conn.commit()
 
 # DecreaseProduct([6])
 # IncreaseProduct("6")

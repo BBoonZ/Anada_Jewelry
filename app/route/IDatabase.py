@@ -6,6 +6,9 @@ class DatabaseConnection:
         self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
 
+    def commit(self):
+        self.conn.commit()
+    
     def close(self):
         """Close the database connection."""
         self.conn.close()

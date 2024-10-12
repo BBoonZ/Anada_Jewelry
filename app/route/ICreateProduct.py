@@ -4,7 +4,7 @@ from .IDatabase import DatabaseConnection
 class ICreateProduct:
     def __init__(self):
         self.conn = DatabaseConnection()
-        self.cursor = self.conn.cursor()
+        self.cursor = self.conn.cursor
 
     def image_to_binary(self, image_path):
         """Convert the image to binary data."""
@@ -54,4 +54,5 @@ class ICreateProduct:
 # Usage Example:
 # product_manager =ICreateProduct('instance/Anada.db')
 # product_manager.create_product('Product Name', 'Product Info', 'image_filename', 10, 'Product Type', 29.99)
+# ICreateProduct.create_product('Product Name', 'Product Info', 'hippo', 10, 'ring', 29.99)
 # product_manager.close_connection()

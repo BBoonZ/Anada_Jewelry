@@ -1,74 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/website/static/css/popup_edit.css">
+    <link rel="stylesheet" href="/static/css/popup_edit.css">
 </head>
+
 <body>
     <div class="edit-popup" id="edit-popup">
         <div class="edit-layout">
             <input type="file" id="editFileInput" style="display: none;">
-            <div class="top">
-                <button class="cancel-button"> ลบสินค้า </button>
-            </div>
+            <form action="/stock/delete/{{ product[0] }}" method="post">
+                <div class="top">
+                    <button type="submit" class="cancel-button"> ลบสินค้า </button>
+                </div>
+            </form>
             <div class="left">
-                <img src="#" alt="" class="edit-product-picture">
-                <button class="change-picture-button" id = "change-picture-button"> Change Picture</button>
+                <img src="{{ url_for('img', path=product[3]) }}" alt="" class="edit-product-picture">
+                <button class="change-picture-button" id="change-picture-button"> Change Picture</button>
             </div>
-            <div class="right">
-                <div class="right-layout">
-                    <div class="margin-inright">
-                        <Label for="product-name"> Name: </Label>
-                        <input type="text" class="input-text" value="เปลี่ยนชื่อตรงนี้" id="product-name">
-                    </div>
+            <form action="/stock/edit/{product_id}" method="post">
+                <div class="right">
+                    <div class="right-layout">
 
-                    <div class="margin-inright">
-                        <Label for="product-detail"> ข้อมูลสินค้า: </Label>
-                        <input type="text" class="input-text" value="เปลี่ยนรายละเอียดสินค้าตรงนี้" id="product-detail">
-                    </div>
+                        <input type="hidden" id="product_id" name="id" value="{{ product[0] }}">
 
-                    <div class="margin-inright">
-                        <Label for="product-type"> ประเภทสินค้า </Label>
-                        <select style="padding: 5px 15px 5px 15px;" id="product-type">
-                            <option value="option1">แหวน</option>
-                            <option value="option2">ต่างหู</option>
-                            <option value="option3">สร้อยข้อมือ</option>
-                            <option value="option4">กำไล</option>
-                            <option value="option5">สร้อยคอ</option>
-                            <option value="option6">จี้</option>
-                        </select>
-                    </div>
+                        <div class="margin-inright">
+                            <Label for="product-name"> Name: </Label>
+                            <input type="text" class="input-text" value="{{ product[1] }}" id="product-name"
+                                name="name">
+                        </div>
 
-                    <div class="margin-inright">
-                        <Label for="product-cost"> ต้นทุน: </Label>
-                        <input type="text" class="input-text" value="เปลี่ยนต้นทุนตรงนี้" id="product-cost">
-                    </div>
+                        <div class="margin-inright">
+                            <Label for="product-detail"> ข้อมูลสินค้า: </Label>
+                            <input type="text" class="input-text" value="{{ product[2] }}" id="product-detail"
+                                name="info">
+                        </div>
 
-                    <div class="margin-inright">
-                        <Label for="product-price"> ราคาขาย: </Label>
-                        <input type="text" class="input-text" value="เปลี่ยนราคาขายตรงนี้" id="product-price">
-                    </div>
+                        <div class="margin-inright">
+                            <Label for="product-type"> ประเภทสินค้า </Label>
+                            <select style="padding: 5px 15px 5px 15px;" id="product-type"
+                                data-selected-product="option6" name="type">
+                                <option value="option1">แหวน</option>
+                                <option value="option2">ต่างหู</option>
+                                <option value="option3">สร้อยข้อมือ</option>
+                                <option value="option4">กำไล</option>
+                                <option value="option5">สร้อยคอ</option>
+                                <option value="option6">จี้</option>
+                            </select>
+                        </div>
 
-                    <div class="margin-inright">
-                        <p> จำนวน </p>
-                        <div class="quantity-container">
-                            <button class="quantity-button" onclick="decrement()">-</button>
-                            <input type="text" id="quantity" class="quantity-input" value="20">
-                            <button class="quantity-button" onclick="increment()">+</button>
+                        <div class="margin-inright">
+                            <Label for="product-cost"> ต้นทุน: </Label>
+                            <input type="text" class="input-text" value="{{ product[7] }}" id="product-cost"
+                                name="maxprice">
+                        </div>
+
+                        <div class="margin-inright">
+                            <Label for="product-price"> ราคาขาย: </Label>
+                            <input type="text" class="input-text" value="{{ product[7] }}" id="product-price"
+                                name="price">
+                        </div>
+
+                        <div class="margin-inright">
+                            <p> จำนวน </p>
+                            <div class="quantity-container">
+                                <button type="button" class="quantity-button" onclick="decrement()">-</button>
+                                <input type="text" id="quantity" class="quantity-input" value="{{ product[5] }}"
+                                    name="value">
+                                <button type="button" class="quantity-button" onclick="increment()">+</button>
+                            </div>
+                        </div>
+
+                        <div class="margin-inright">
+                            <button type="button" class="edit-cancel-button" id="edit-cancel-button"
+                                onclick="closeEdit()"> Cancel
+                            </button>
+                            <button type="submit" class="edit-submit-button" id="edit-submit-button"> Submit </button>
+
                         </div>
                     </div>
-
-                    <div class="margin-inright">
-                        <button class="edit-cancel-button" id="edit-cancel-button" onclick="closeEdit()"> Cancel </button>
-                        <button class="edit-submit-button" id="edit-submit-button"> Submit </button>
-                        
-                    </div>
                 </div>
-            </div>
+            </form>
         </div>
-        </div>
-        <script src="/website/static/javascript/popup_edit.js"></script>
+    </div>
+    <script src="/static/javascript/popup_edit.js"></script>
 </body>
+
 </html>

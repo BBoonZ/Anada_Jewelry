@@ -1,10 +1,10 @@
-document.querySelector('.button_sale_record').addEventListener('click', function() {
-    window.location.href = '/recordsales/none';
-});
+// document.querySelector('.button_sale_record').addEventListener('click', function() {
+//     window.location.href = '/recordsales/none';
+// });
 
-document.querySelector('.dropdown_Stock_class').addEventListener('click', function() {
-    window.location.href = 'stock.html';
-});
+// document.querySelector('.dropdown_Stock_class').addEventListener('click', function() {
+//     window.location.href = 'stock.html';
+// });
 
 // เพิ่มสินค้าใหม่ popup
 
@@ -61,17 +61,15 @@ function increment() {
 
 // เปิด edit popup
 function openEdit(url){
-    let editPopup = document.getElementById("edit-popup");
-    editPopup.style.display = "block";
-    overlay.style.display = "block";
-    // url
-    editPopup.src = url;
+    document.getElementById('popupContainer').style.display = 'block';
+    var iframe = document.getElementById('contentIframe');
+    iframe.src = url;
+    console.log(url)
 }
 
 // ปิดหน้าต่าง edit popup
 function closeEdit(){
-    document.getElementById("edit-popup").style.display = 'none';
-    overlay.style.display = 'none';
+    document.getElementById('popupContainer').style.display = 'none';
 }
 
 
