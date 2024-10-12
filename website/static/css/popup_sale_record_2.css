@@ -117,3 +117,7 @@ table th {
 .button_submit:hover {
     background-color: #388eff;
 }
+
+.border_button {
+    border: none;
+}
