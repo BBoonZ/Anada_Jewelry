@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/website/static/css/popup_create.css">
+</head>
+<body>
+    <!--  pop up เพิ่มสินค้าใหม่ -->
+    <div class="new-product" id="newProductPopup">
+        <div class="new-product-layout">
+            <div class="new-topleft">
+                <button class="cancel-button" id="newCancelButton"> Cancel </button>
+            </div>
+            <div class="new-topright">
+                <h2 style="margin: 20px 0px 10px 0px;"> ชื่อสินค้า </h2>
+                <input type="text" class="input-text">
+            </div>
+            <div class="new-downleft">
+                <img src="/app/img/hippo.jpg" alt="" class="new-image">
+                <button class="add-picture-button" id="add-picture-button"> Add Picture </button>
+                <input type="file" id="fileInput" style="display: none;">
+            </div>
+            <div class="new-downright">
+                <div class="downright-item">
+                    <h2> คำอธิบายสินค้า </h2>
+                    <textarea style="width: 380px; height: 120px; font-size: 20px;"></textarea>
+                </div>
+
+                <div class="downright-item">
+                <h2> ประเภท</h2>
+                <select>
+                    <option value="" disabled selected>choose</option>
+                    <option value="option1">แหวน</option>
+                    <option value="option2">ต่างหู</option>
+                    <option value="option3">สร้อยข้อมือ</option>
+                    <option value="option4">กำไล</option>
+                    <option value="option5">สร้อยคอ</option>
+                    <option value="option6">จี้</option>
+                </select>
+                </div>
+
+                <div class="downright-item">
+                    <h2> ต้นทุน </h2>
+                    <input type="text" class="input-text">
+                </div>
+
+                <div class="downright-item">
+                    <h2> จำนวนสินค้า </h2>
+                    <div class="slider-container">
+                    <input type="text" class="input-text">
+                </div>
+                <div class="downright-item-price">
+                    <h2> ราคาขาย </h2>
+                    <input type="text" class="input-text">
+                </div>
+                <div class="downright-item">
+                    <button class="new-submit-button"> Submit </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/website/static/javascript/popup_create.js"></script>
+</body>
+</html>
