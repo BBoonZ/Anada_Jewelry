@@ -47,6 +47,9 @@ class RecordManager:
                 self.Record_temp.remove(record)
                 break
 
+    async def set_record_temp(self):
+        self.Record_temp = []
+
 
 
 

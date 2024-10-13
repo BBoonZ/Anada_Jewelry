@@ -46,6 +46,10 @@ class SalesRouter:
 
     async def summit_record(self):
         info = await self.IRecord.get_record_temp()
+        for i in info:
+            # print(i[5], i[6], type(i[5]))
+            self.IStock.decrease_product(i[0], i[6])
+        await self.IRecord.set_record_temp()
         # You can handle the deletion logic here as needed
         return None
 

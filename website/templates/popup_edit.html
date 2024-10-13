@@ -14,7 +14,7 @@
             <input type="file" id="editFileInput" style="display: none;">
             <form action="/stock/delete/{{ product[0] }}" method="post">
                 <div class="top">
-                    <button type="submit" class="cancel-button"> ลบสินค้า </button>
+                    <button type="submit" class="cancel-button"> Delete Product </button>
                 </div>
             </form>
             <div class="left">
@@ -34,38 +34,39 @@
                         </div>
 
                         <div class="margin-inright">
-                            <Label for="product-detail"> ข้อมูลสินค้า: </Label>
+                            <Label for="product-detail"> Details: </Label>
                             <input type="text" class="input-text" value="{{ product[2] }}" id="product-detail"
                                 name="info">
                         </div>
 
                         <div class="margin-inright">
-                            <Label for="product-type"> ประเภทสินค้า </Label>
+                            <Label for="product-type"> Type </Label>
                             <select style="padding: 5px 15px 5px 15px;" id="product-type"
-                                data-selected-product="option6" name="type">
-                                <option value="option1">แหวน</option>
-                                <option value="option2">ต่างหู</option>
-                                <option value="option3">สร้อยข้อมือ</option>
-                                <option value="option4">กำไล</option>
-                                <option value="option5">สร้อยคอ</option>
-                                <option value="option6">จี้</option>
+                                data-selected-product="{{ option }}" name="type">
+                                <option value="option0">None</option>
+                                <option value="option1">ring</option>
+                                <option value="option2">earring</option>
+                                <option value="option3">bracelets</option>
+                                <option value="option4">bangles</option>
+                                <option value="option5">necklaces</option>
+                                <option value="option6">pendants</option>
                             </select>
                         </div>
 
-                        <div class="margin-inright">
+                        <!-- <div class="margin-inright">
                             <Label for="product-cost"> ต้นทุน: </Label>
                             <input type="text" class="input-text" value="{{ product[7] }}" id="product-cost"
                                 name="maxprice">
-                        </div>
+                        </div> -->
 
                         <div class="margin-inright">
-                            <Label for="product-price"> ราคาขาย: </Label>
+                            <Label for="product-price"> Price: </Label>
                             <input type="text" class="input-text" value="{{ product[7] }}" id="product-price"
                                 name="price">
                         </div>
 
                         <div class="margin-inright">
-                            <p> จำนวน </p>
+                            <p> Quantity </p>
                             <div class="quantity-container">
                                 <button type="button" class="quantity-button" onclick="decrement()">-</button>
                                 <input type="text" id="quantity" class="quantity-input" value="{{ product[5] }}"

@@ -18,7 +18,7 @@
             </div>
             <div class="menu">
                 <a href="/recordsales/none" id="button_sale_record_id" class="button_sale_record" >Sale Record</a>
-                <a href="/stock" id="dropdown_Stock_id" class="dropdown_Stock_class" >Stock</a>
+                <a href="/stock/type-none" id="dropdown_Stock_id" class="dropdown_Stock_class" >Stock</a>
             </div>
         </div>
     </header>
@@ -28,19 +28,25 @@
     <body class="content">
         <div class="white-square">
             <div class="list_product">
-                <button class="all_product"> <img src="/static/img/all.png" width="40px"
-                        height="40px">สินค้าทั้งหมด</button>
-                <button class="ring"> <img src="/static/img/ring.png" width="50px" height="50px">แหวน</button>
+                <!-- <button class="all_product"> <img src="/static/img/all.png" width="40px"
+                        height="40px">All products</button>
+                <button class="ring"> <img src="/static/img/ring.png" width="50px" height="50px">ring</button>
                 <button class="earring"> <img src="/static/img/earrings.png" width="50px"
-                        height="50px">ต่างหู</button>
+                        height="50px">earring</button>
                 <button class="bracelets"> <img src="/static/img/bracelet.png" width="50px"
-                        height="50px">สร้อยข้อมือ</button>
-                <button class="bangles"> <img src="/static/img/bangles.png" width="50px" height="50px">กำไล</button>
+                        height="50px">bracelets</button>
+                <button class="bangles"> <img src="/static/img/bangles.png" width="50px" height="50px">bangles</button>
                 <button class="necklaces"> <img src="/static/img/necklace.png" width="50px"
-                        height="50px">สร้อยคอ</button>
-                <button class="pendants"> <img src="/static/img/pendant.png" width="50px" height="50px">จี้</button>
-                <button class="new_item" onclick="window.location.href='/stock/create';" id="new_item">เพิ่มสินค้าใหม่</button>
-                <button class="delete_item">ลบสินค้า</button>
+                        height="50px">necklaces</button>
+                <button class="pendants"> <img src="/static/img/pendant.png" width="50px" height="50px">pendants</button> -->
+                <button class="all_product" onclick="window.location.href='/stock/none';"> <img src="/static/img/all.png" width="40px" height="40px">All_product</button>
+                <button class="ring" onclick="window.location.href='/stock/ring';"> <img src="/static/img/ring.png" width="50px" height="50px">Ring</button>
+                <button class="earring" onclick="window.location.href='/stock/earring';"> <img src="/static/img/earrings.png" width="50px" height="50px">Earring</button>
+                <button class="bracelets" onclick="window.location.href='/stock/bracelets';"> <img src="/static/img/bracelet.png" width="50px" height="50px">Bracelets</button>
+                <button class="bangles" onclick="window.location.href='/stock/bangles';"> <img src="/static/img/bangles.png" width="50px" height="50px">Bangles</button>
+                <button class="necklaces" onclick="window.location.href='/stock/necklaces';"> <img src="/static/img/necklace.png" width="50px" height="50px">Necklaces</button>
+                <button class="pendants" onclick="window.location.href='/stock/pendants';"> <img src="/static/img/pendant.png" width="50px" height="50px">Pendants</button><button class="new_item" onclick="window.location.href='/stock/create';" id="new_item">Add product</button>
+                <!-- <button class="delete_item">Delete Product</button> -->
             </div>
 
             <div class="show_product">
@@ -50,16 +56,16 @@
                             src="{{ url_for('img', path=i[3]) }}"></a>
                     <br>
                     <h3>Name: {{ i[1] }}</h3>
-                    <h3>จำนวนสินค้า: {{ i[5] }}</h3>
+                    <h3>Quantity: {{ i[5] }}</h3>
                 </div>
                 {% endfor %}
 
-                <div class="product_1">
+                <!-- <div class="product_1">
                     <a onclick=openEdit()><img src="/static/img/mock_product.png"></a>
                     <h3>Name: Product2</h3>
                     <br>
                     <h3>จำนวนสินค้า : 20</h3>
-                </div>
+                </div> -->
             </div>
         </div>
 

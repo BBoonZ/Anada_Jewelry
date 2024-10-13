@@ -19,17 +19,17 @@
                 <input type="hidden" id="product_id" name="id" value="{{ Product[0] }}">
 
                 <h1>Name: {{ Product[1] }}</h1>
-                <p class="details">รายละเอียดสินค้า</p>
-                <h2>ประเภทสินค้า: {{ Product[6] }}</h2>
-                <h2>ข้อมูลสินค้า: {{ Product[2] }}</h2>
+                <p class="details">Details {{ Product[2] }}</p>
+                <h2>Type: {{ Product[6] }}</h2>
+                <!-- <h2>ข้อมูลสินค้า: {{ Product[2] }}</h2> -->
                 <!-- <h2>Size</h2>
             <input class="size" type="text" required> -->
-                <h2>ราคา</h2>
+                <h2>Price</h2>
                 <div class="price">
                     <input type="text" name="price" required>
                     <p>BAHT</p>
                 </div>
-                <h2>จำนวน</h2>
+                <h2>Quantity</h2>
                 <div class="counter-container">
                     <button type="button" id="decrement">-</button>
                     <input type="number" id="counter" name="value" value="1">

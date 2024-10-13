@@ -1,10 +1,12 @@
 from .IDatabase import DatabaseConnection
+from .ICreateProduct import ICreateProduct
 
 class ProductManager:
     def __init__(self):
         """Initialize the ProductManager with the database cursor and connection."""
         self.conn = DatabaseConnection()
         self.cursor = self.conn.cursor
+        self.ICreate = ICreateProduct()
 
     def get_all(self):
         """Retrieve all products with stock quantities greater than 0."""
@@ -32,16 +34,14 @@ class ProductManager:
 
     def decrease_product(self, product_ids, num=1):
         """Decrease the stock quantity of the given product(s)."""
-        for product_id in product_ids:
-            product_id_str = str(product_id)
-            # Fetch current stock quantity
-            self.cursor.execute("SELECT stock_quantity FROM product WHERE id = ?", (product_id_str,))
-            current_quantity = self.cursor.fetchall()[0][0]
+        # Fetch current stock quantity
+        self.cursor.execute("SELECT stock_quantity FROM product WHERE id = ?", (product_ids,))
+        current_quantity = self.cursor.fetchall()[0][0]
 
-            # Update stock quantity
-            new_quantity = current_quantity - num
-            self.cursor.execute("UPDATE product SET stock_quantity = ? WHERE id = ?", (new_quantity, product_id_str))
-            self.conn.commit()
+        # Update stock quantity
+        new_quantity = int(current_quantity) - int(num)
+        self.cursor.execute("UPDATE product SET stock_quantity = ? WHERE id = ?", (new_quantity, product_ids))
+        self.conn.commit()
         print("DecreaseSuccess")
 
     def increase_product(self, product_id, num=1):
@@ -50,12 +50,14 @@ class ProductManager:
         current_quantity = self.cursor.fetchall()[0][0]
 
         # Update stock quantity
-        new_quantity = current_quantity + num
+        new_quantity = int(current_quantity) + (num)
         self.cursor.execute("UPDATE product SET stock_quantity = ? WHERE id = ?", (new_quantity, product_id))
         self.conn.commit()
         print("IncreaseSuccess")
 
     def setProduct(self, id, name, type, detail, price, stock):
+        type = self.ICreate.convert_type(type)
+
         self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? WHERE id = ?", (name, detail, stock, type, price, id))
         self.conn.commit()
 

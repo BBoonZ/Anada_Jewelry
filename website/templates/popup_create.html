@@ -14,11 +14,11 @@
         <div class="new-product" id="newProductPopup">
             <div class="new-product-layout">
                 <div class="new-topleft">
-                    <button class="cancel-button" id="newCancelButton"> Cancel </button>
+                    <button type="button" class="cancel-button" id="newCancelButton"> Cancel </button>
                 </div>
                 <div class="new-topright">
-                    <h2 style="margin: 20px 0px 10px 0px;"> ชื่อสินค้า </h2>
-                    <input type="text" class="input-text" name="name">
+                    <h2 style="margin: 20px 0px 10px 0px;"> Product Name </h2>
+                    <input type="text" class="input-text" name="name" required>
                 </div>
 
                 <div class="new-downleft">
@@ -30,20 +30,21 @@
                 </div>
                 <div class="new-downright">
                     <div class="downright-item">
-                        <h2> คำอธิบายสินค้า </h2>
+                        <h2> Details </h2>
                         <textarea style="width: 380px; height: 120px; font-size: 20px;" name="info"></textarea>
                     </div>
 
                     <div class="downright-item">
-                        <h2> ประเภท</h2>
-                        <select>
+                        <h2> Type</h2>
+                        <select name="product_type" required>
                             <option value="" disabled selected>choose</option>
-                            <option value="option1">แหวน</option>
-                            <option value="option2">ต่างหู</option>
-                            <option value="option3">สร้อยข้อมือ</option>
-                            <option value="option4">กำไล</option>
-                            <option value="option5">สร้อยคอ</option>
-                            <option value="option6">จี้</option>
+                            <option value="option0">None</option>
+                            <option value="option1">ring</option>
+                            <option value="option2">earring</option>
+                            <option value="option3">bracelets</option>
+                            <option value="option4">bangles</option>
+                            <option value="option5">necklaces</option>
+                            <option value="option6">pendants</option>
                         </select>
                     </div>
 
@@ -53,13 +54,13 @@
                     </div> -->
 
                     <div class="downright-item">
-                        <h2> จำนวนสินค้า </h2>
+                        <h2> quantity </h2>
                         <div class="slider-container">
-                            <input type="text" class="input-text" name="value">
+                            <input type="text" class="input-text" name="value" required>
                         </div>
                         <div class="downright-item-price">
-                            <h2> ราคาขาย </h2>
-                            <input type="text" class="input-text" name="price">
+                            <h2> price </h2>
+                            <input type="text" class="input-text" name="price" required>
                         </div>
                         <div class="downright-item">
                             <button type="submit" class="new-submit-button"> Submit </button>
