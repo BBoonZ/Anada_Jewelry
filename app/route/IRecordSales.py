@@ -8,7 +8,7 @@ class RecordManager:
         self.product_id2 = 1
         self.all = 0
 
-    async def save_record_temp(self, id, price, value):
+    async def save_record(self, id, price, value):
         """Save a temporary record with product info, price, and value."""
         # Fetch product details based on the product ID
         self.cursor.execute("SELECT id, name, information, file_pic, type FROM product WHERE id = ?", (id,))
@@ -26,7 +26,7 @@ class RecordManager:
         # Increment the product ID counter
         self.product_id2 += 1
 
-    async def get_record_temp(self):
+    async def get_save_record(self):
         """Return the list of temporary records."""
         return self.Record_temp
 

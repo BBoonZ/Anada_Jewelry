@@ -32,3 +32,18 @@ class UploadRoute:
             shutil.copyfileobj(file.file, buffer)
 
         return {"filename": file.filename, "file_path": file_path}
+
+    async def delete_file(self, filename: str):
+        # Create the file path
+        print(filename)
+        file_path = os.path.join(self.upload_dir, filename)
+
+        # Check if the file exists
+        if os.path.exists(file_path):
+            try:
+                os.remove(file_path)  # Delete the file
+                return {"status": "File deleted successfully", "file_path": file_path}
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=f"Error deleting file: {str(e)}")
+        else:
+            raise HTTPException(status_code=404, detail="File not found")

@@ -1,5 +1,6 @@
 from .IDatabase import DatabaseConnection
 from .ICreateProduct import ICreateProduct
+from .UploadFile import UploadRoute
 
 class ProductManager:
     def __init__(self):
@@ -7,6 +8,7 @@ class ProductManager:
         self.conn = DatabaseConnection()
         self.cursor = self.conn.cursor
         self.ICreate = ICreateProduct()
+        self.IUpload = UploadRoute()
 
     def get_all(self):
         """Retrieve all products with stock quantities greater than 0."""
@@ -55,10 +57,16 @@ class ProductManager:
         self.conn.commit()
         print("IncreaseSuccess")
 
-    def setProduct(self, id, name, type, detail, price, stock):
+    async def setProduct(self, id, name, type, detail, price, stock, pic):
         type = self.ICreate.convert_type(type)
+        #Delete Pic
+        self.cursor.execute("SELECT file_pic FROM product WHERE id = ? AND file_pic != 'main.png'", (id,))
+        file = self.cursor.fetchall()[0][0]
+        if (file):
+            await self.IUpload.delete_file(file)
+            await self.IUpload.upload_file(pic)
 
-        self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? WHERE id = ?", (name, detail, stock, type, price, id))
+        self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? , file_pic = ? WHERE id = ?", (name, detail, stock, type, price, pic.filename, id))
         self.conn.commit()
 
 # DecreaseProduct([6])

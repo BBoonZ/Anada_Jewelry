@@ -32,11 +32,11 @@ class SalesRouter:
         return self.templates.TemplateResponse("popup_sale_record_1.html", {"request": request, "Product": product})
 
     async def save_record(self, id: str = Form(), price: str = Form(), value: str = Form()):
-        await self.IRecord.save_record_temp(id, price, value)
+        await self.IRecord.save_record(id, price, value)
         return None
 
     async def cart_show(self, request: Request):
-        info = await self.IRecord.get_record_temp()
+        info = await self.IRecord.get_save_record()
         all_price = await self.IRecord.get_all_price()
         return self.templates.TemplateResponse("popup_sale_record_2.html", {"request": request, "Product": info, "All_price": all_price})
 
@@ -45,7 +45,7 @@ class SalesRouter:
         return RedirectResponse(url="/cart", status_code=303)
 
     async def summit_record(self):
-        info = await self.IRecord.get_record_temp()
+        info = await self.IRecord.get_save_record()
         for i in info:
             # print(i[5], i[6], type(i[5]))
             self.IStock.decrease_product(i[0], i[6])

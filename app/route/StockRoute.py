@@ -48,10 +48,11 @@ class StockRouter:
         option = option_dic.get(option)
         return self.templates.TemplateResponse("popup_edit.html", {"request" : request, "product": info, "option": option})
 
-    async def summit_popup_edit(self, id: str = Form(), name: str = Form(), info: str = Form(), type: str = Form(), price: str = Form(), value: str = Form()):
+    async def summit_popup_edit(self, id: str = Form(), name: str = Form(),file: UploadFile = File(), info: str = Form(), type: str = Form(), price: str = Form(), value: str = Form()):
         print(id, name, info, type, price, value)
         # return RedirectResponse(url="/stock", status_code=303)
-        self.IStock.setProduct(id, name, type, info, price, value)
+        # await self.Upload.upload_file(file)
+        await self.IStock.setProduct(id, name, type, info, price, value, file)
         return None
 
     async def create_product(self, request: Request):
@@ -60,7 +61,7 @@ class StockRouter:
     async def summit_create_product(self, name = Form(), info = Form(), product_type = Form(), file: UploadFile = File(), price = Form(), value = Form()):
         await self.Upload.upload_file(file)
         # print(name, info, file.filename, value, product_type, price)
-        await self.ICreate.create_product(name, info, file.filename, value, product_type, price)
+        await self.ICreate.create_product(name, info, file.filename, value, product_type, price,)
         return None
 
     async def delete_product(self, product_id):

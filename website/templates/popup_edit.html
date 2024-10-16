@@ -18,10 +18,11 @@
                 </div>
             </form>
             <div class="left">
-                <img src="{{ url_for('img', path=product[3]) }}" alt="" class="edit-product-picture">
-                <button class="change-picture-button" id="change-picture-button"> Change Picture</button>
+                <form action="/stock/edit/{product_id}" method="post" enctype="multipart/form-data">
+                <img src="{{ url_for('img', path=product[3]) }}" alt="Product Image" class="edit-product-picture" id="imagePreview">
+                <button type="button" class="change-picture-button" id="change-picture-button">Change Picture</button>
+                <input name="file" type="file" id="fileInput" style="display: none;" accept="image/png, image/jpeg">
             </div>
-            <form action="/stock/edit/{product_id}" method="post">
                 <div class="right">
                     <div class="right-layout">
 

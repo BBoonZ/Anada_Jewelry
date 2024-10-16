@@ -37,16 +37,20 @@ function closeEdit() {
 }
 
 // เปิดหน้าเลือกไฟล์ของ edit popup
-document.getElementById('change-picture-button').addEventListener('click', function () {
-    document.getElementById('editFileInput').click();
+document.getElementById('change-picture-button').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
 });
 
-// เมื่อมีการเลือกไฟล์ แสดงชื่อไฟล์ที่เลือกใน console
-document.getElementById('editFileInput').addEventListener('change', function () {
-    const file = this.files[0];
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
     if (file) {
-        console.log('File selected: ' + file.name);
-    } else {
-        console.log('No file selected');
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = e.target.result; // Update the image src to the new image
+        };
+
+        reader.readAsDataURL(file);
     }
 });
