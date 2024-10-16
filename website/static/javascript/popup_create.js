@@ -40,6 +40,11 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
     }
 });
 
+document.getElementById('fileInput').addEventListener('change', function() {
+    const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+    console.log(fileName);  // You can display it in the UI or log it for debugging
+});
+
 
 // document.getElementById('add-picture-button').addEventListener('click', function() {
 //     document.getElementById('fileInput').click();

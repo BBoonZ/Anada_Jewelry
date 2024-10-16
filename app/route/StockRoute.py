@@ -59,8 +59,14 @@ class StockRouter:
         return self.templates.TemplateResponse("popup_create.html", {"request": request})
 
     async def summit_create_product(self, name = Form(), info = Form(), product_type = Form(), file: UploadFile = File(), price = Form(), value = Form()):
+        # print(file)
+        if (file.filename == ""):
+            print("wat")
+            await self.ICreate.create_product(name, info, "main.png", value, product_type, price,)
+            return None
+
         await self.Upload.upload_file(file)
-        # print(name, info, file.filename, value, product_type, price)
+        # # print(name, info, file.filename, value, product_type, price)
         await self.ICreate.create_product(name, info, file.filename, value, product_type, price,)
         return None
 
