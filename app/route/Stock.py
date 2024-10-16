@@ -12,13 +12,13 @@ class ProductManager:
 
     def get_all(self):
         """Retrieve all products with stock quantities greater than 0."""
-        self.cursor.execute("SELECT * FROM product")
+        self.cursor.execute("SELECT * FROM product ORDER BY id")
         products = self.cursor.fetchall()
         return products
 
     def get_available(self):
         """Retrieve all products with stock quantities greater than 0."""
-        self.cursor.execute("SELECT * FROM product WHERE stock_quantity > 0")
+        self.cursor.execute("SELECT * FROM product WHERE stock_quantity > 0 ORDER BY id")
         products = self.cursor.fetchall()
         return products
 
@@ -30,7 +30,7 @@ class ProductManager:
 
     def get_type_product(self, product_type):
         """Retrieve all products of a specific type."""
-        self.cursor.execute("SELECT * FROM product WHERE type = ?", (product_type,))
+        self.cursor.execute("SELECT * FROM product WHERE type = ? ORDER BY id", (product_type,))
         products = self.cursor.fetchall()
         return products
 

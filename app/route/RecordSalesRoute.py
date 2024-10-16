@@ -19,6 +19,7 @@ class SalesRouter:
         self.router.add_api_route("/saveRecord/", self.save_record, methods=["POST"])
         self.router.add_api_route("/cart", self.cart_show, methods=["GET"])
         self.router.add_api_route("/cart/delete/{product_id}", self.cart_delete, methods=["GET"])
+        self.router.add_api_route("/cart/edit/{product_id}/{type}/{value}", self.card_edit, methods=["POST"])
         self.router.add_api_route("/cart", self.summit_record, methods=["POST"])
 
     async def record_sales_home(self, request: Request, type: str):
@@ -44,12 +45,18 @@ class SalesRouter:
         await self.IRecord.delete_record_temp(product_id)
         return RedirectResponse(url="/cart", status_code=303)
 
+    async def card_edit(self, product_id: str, type, value):
+        print(product_id, type, value)
+        await self.IRecord.edit_record(product_id, type, value)
+        return RedirectResponse(url="/cart", status_code=303)
+
     async def summit_record(self):
         info = await self.IRecord.get_save_record()
         for i in info:
             # print(i[5], i[6], type(i[5]))
             self.IStock.decrease_product(i[0], i[6])
         await self.IRecord.set_record_temp()
+        self.IRecord.all = []
         # You can handle the deletion logic here as needed
         return None
 
