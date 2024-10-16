@@ -61,11 +61,12 @@ class ProductManager:
         type = self.ICreate.convert_type(type)
         #Delete Pic
         self.cursor.execute("SELECT file_pic FROM product WHERE id = ? AND file_pic != 'main.png'", (id,))
-        file = self.cursor.fetchall()[0][0]
-        if (file):
+        try:
+            file = self.cursor.fetchall()[0][0]
             await self.IUpload.delete_file(file)
             await self.IUpload.upload_file(pic)
-
+        except:
+            await self.IUpload.upload_file(pic)
         self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? , file_pic = ? WHERE id = ?", (name, detail, stock, type, price, pic.filename, id))
         self.conn.commit()
 

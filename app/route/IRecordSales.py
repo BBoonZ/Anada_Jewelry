@@ -36,9 +36,9 @@ class RecordManager:
         """Update the total price by adding the given value."""
         self.all.append([id, num])
 
-    async def set_price(self, id, num):
+    async def set_price(self, id, num=0):
         for i in self.all:
-            # print(type(i[0]), num)
+            print(i[0], i[1])
             if i[0] == int(id):
                 i[1] = num
                 break
@@ -57,7 +57,7 @@ class RecordManager:
             # print(type(record[7]), type(id))
             if record[7] == int(id):
                 # Update the total price and remove the record
-                self.all -= int(record[5].replace(",", ""))
+                await self.set_price(record[7])
                 self.Record_temp.remove(record)
                 break
 

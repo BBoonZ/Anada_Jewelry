@@ -46,7 +46,7 @@ class SalesRouter:
         return RedirectResponse(url="/cart", status_code=303)
 
     async def card_edit(self, product_id: str, type, value):
-        print(product_id, type, value)
+        # print(product_id, type, value)
         await self.IRecord.edit_record(product_id, type, value)
         return RedirectResponse(url="/cart", status_code=303)
 
