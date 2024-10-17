@@ -6,16 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anada Jewellery</title>
     <link rel="stylesheet" href="/static/css/stock.css">
-    <style>
-        .list_product {
-            margin: 10px 20px 0 20px;
-        }
-        .show_product {
-            width: 100%;
-            padding: 20px 100px;
-            gap: 100px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -56,7 +51,8 @@
                 <button class="bangles" onclick="window.location.href='/stock/type-bangles';"> <img src="/static/img/bangles.png" width="50px" height="50px">Bangles</button>
                 <button class="necklaces" onclick="window.location.href='/stock/type-necklaces';"> <img src="/static/img/necklace.png" width="50px" height="50px">Necklaces</button>
                 <button class="pendants" onclick="window.location.href='/stock/type-pendants';"> <img src="/static/img/pendant.png" width="50px" height="50px">Pendants</button>
-                <button class="new_item" onclick="window.location.href='/stock/create';" id="new_item" onclick="openNew(this.href); return false;">Add product</button>
+                
+                <button class="new_item" id="new_item" onclick="openNew('/stock/create'); return false;">Add product</button>
                 <!-- <button class="delete_item">Delete Product</button> -->
             </div>
 
@@ -94,12 +90,14 @@
             function closePopup() {
                 document.getElementById('popupContainer').style.display = 'none';
             }
+
             function openNew(url) {
                 document.getElementById('popup_new').style.display = 'block';
-                var iframe = document.getElementById('contentIframe2');
-                iframe.src = url;  // Set the iframe's src to the clicked link's href
+                var iframe2 = document.getElementById('contentIframe2');
+                iframe2.src = url;
                 console.log(url)
             }
+
             function closePopupNew() {
                 document.getElementById('popup_new').style.display = 'none';
             }

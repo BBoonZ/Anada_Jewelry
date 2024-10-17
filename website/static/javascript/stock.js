@@ -72,7 +72,6 @@ function closeEdit(){
     document.getElementById('popupContainer').style.display = 'none';
 }
 
-
 // เปิดหน้าเลือกไฟล์ของ edit popup
 document.getElementById('change-picture-button').addEventListener('click', function() {
     document.getElementById('editFileInput').click();
@@ -87,5 +86,3 @@ document.getElementById('editFileInput').addEventListener('change', function() {
         console.log('No file selected');
     }
 });
-
-

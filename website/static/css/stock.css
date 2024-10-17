@@ -25,6 +25,9 @@ header {
     left: 50%;
     transform: translateX(-50%);
     color: white;
+    font-family: "Playfair Display", serif;
+    font-weight:lighter;
+    font-size: 50px;
 }
 
 .header-container {
@@ -41,6 +44,7 @@ header {
     align-items: flex-end;
     padding: 40px 0 0 70px;
     height: 100%;
+    font-family: "Nunito", sans-serif;
 }
 
 .button_sale_record {
@@ -149,8 +153,8 @@ header {
     display: grid;
     grid-template-rows: repeat(10, 1fr);
     width: 205px;
-    margin: 0 20px;
     overflow: hidden;
+    margin: 10px 20px 0 20px;
 }
 
 .list_product button {
@@ -166,6 +170,7 @@ header {
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 
 .ring {
@@ -173,6 +178,7 @@ header {
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 
 .earring {
@@ -180,24 +186,28 @@ header {
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 .bracelets {
     align-items: center;
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 .bangles {
     align-items: center;
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 .necklaces {
     align-items: center;
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 
 .pendants {
@@ -205,6 +215,7 @@ header {
     justify-content: space-between;
     font-size: 18px;
     border: none;
+    font-family: "Nunito", sans-serif;
 }
 
 .new_item {
@@ -219,6 +230,7 @@ header {
     margin-bottom: 10px;
     cursor: pointer;
     margin-top: 10px;
+    font-family: "Nunito", sans-serif;
 }
 
 .new_item:hover {
@@ -250,10 +262,11 @@ header {
     justify-content: flex-start; /* จัดให้อยู่ทางซ้าย */
     align-items: flex-start; /* จัดให้อยู่ด้านบน */
     text-align: left;
-    padding: 20px 80px;
-    gap: 50px;
     overflow-y: auto;
     overflow-x: hidden;
+    width: 100%;
+    padding: 20px 100px;
+    gap: 100px;
 }
 
 .product_1 {
@@ -268,6 +281,7 @@ header {
 
 .product_1 h3{
     text-align: center;
+    font-family: "K2D", sans-serif;
 }
 
 /* ตกแต่ง scroll bar */
@@ -303,6 +317,24 @@ header {
 }
 
 .popup iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.popup_new {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 700px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup_new iframe {
     width: 100%;
     height: 100%;
 }

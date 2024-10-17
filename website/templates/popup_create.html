@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/static/css/popup_create.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,7 +21,7 @@
                     <button type="button" class="cancel-button" id="newCancelButton" onclick="closeNew()"> Cancel </button>
                 </div>
                 <div class="new-topright">
-                    <h2 style="margin: 20px 0px 10px 0px;"> Product Name </h2>
+                    <h2> Product Name </h2>
                     <input type="text" class="input-text" name="name" required>
                 </div>
 
@@ -39,12 +43,12 @@
                         <select name="product_type" required>
                             <option value="" disabled selected>choose</option>
                             <option value="option0">None</option>
-                            <option value="option1">ring</option>
-                            <option value="option2">earring</option>
-                            <option value="option3">bracelets</option>
-                            <option value="option4">bangles</option>
-                            <option value="option5">necklaces</option>
-                            <option value="option6">pendants</option>
+                            <option value="option1">Ring</option>
+                            <option value="option2">Earring</option>
+                            <option value="option3">Bracelets</option>
+                            <option value="option4">Bangles</option>
+                            <option value="option5">Necklaces</option>
+                            <option value="option6">Pendants</option>
                         </select>
                     </div>
 
@@ -63,7 +67,7 @@
                             <input type="text" class="input-text" name="price" required>
                         </div>
                         <div class="downright-item">
-                            <button type="submit" class="new-submit-button"> Submit </button>
+                            <button type="submit" class="new-submit-button" onclick="closeNew()"> Submit </button>
                         </div>
                     </div>
                 </div>

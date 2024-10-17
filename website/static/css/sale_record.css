@@ -20,11 +20,15 @@ header {
 
 .logo h1 {
     margin: 0;
+    margin-bottom: 10px;
     text-align: center;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     color: white;
+    font-family: "Playfair Display", serif;
+    font-weight:lighter;
+    font-size: 50px;
 }
 
 .cart {
@@ -59,14 +63,16 @@ header {
     grid-template-rows: auto auto;
     grid-gap: 10px;
     padding: 20px 20px 0 20px;
+    height: 145px;
 }
 
 .menu {
     display: flex;
-    justify-content: center;
     align-items: flex-end;
+    justify-content: center;
     padding: 0 0 0 70px;
     height: 100%;
+    font-family: "Nunito", sans-serif;
 }
 
 .button_sale_record {
@@ -192,6 +198,7 @@ header {
     padding: 0 5px;
     background-color: white;
     cursor: pointer;
+    font-family: "Nunito", sans-serif;
 }
 
 .all_product {
@@ -205,6 +212,7 @@ header {
     padding: 0 5px;
     background-color: white;
     cursor: pointer;
+    font-family: "Nunito", sans-serif;
 }
 
 .show_product {
@@ -231,6 +239,7 @@ header {
 
 .product_1 h3{
     text-align: center;
+    font-family: "K2D", sans-serif;
 }
 
 /* ตกแต่ง scroll bar */

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/static/css/popup_edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +18,7 @@
             <input type="file" id="editFileInput" style="display: none;">
             <form action="/stock/delete/{{ product[0] }}" method="post">
                 <div class="top">
-                    <button type="submit" class="cancel-button"> Delete Product </button>
+                    <button type="submit" class="cancel-button" onclick="closeEdit()"> ลบสินค้า </button>
                 </div>
             </form>
             <div class="left">
@@ -43,12 +47,12 @@
                             <select style="padding: 5px 15px 5px 15px;" id="product-type"
                                 data-selected-product="{{ option }}" name="type">
                                 <option value="option0">None</option>
-                                <option value="option1">ring</option>
-                                <option value="option2">earring</option>
-                                <option value="option3">bracelets</option>
-                                <option value="option4">bangles</option>
-                                <option value="option5">necklaces</option>
-                                <option value="option6">pendants</option>
+                                <option value="option1">Ring</option>
+                                <option value="option2">Earring</option>
+                                <option value="option3">Bracelets</option>
+                                <option value="option4">Bangles</option>
+                                <option value="option5">Necklaces</option>
+                                <option value="option6">Pendants</option>
                             </select>
                         </div>
 
