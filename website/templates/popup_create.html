@@ -14,7 +14,7 @@
         <div class="new-product" id="newProductPopup">
             <div class="new-product-layout">
                 <div class="new-topleft">
-                    <button type="button" class="cancel-button" id="newCancelButton"> Cancel </button>
+                    <button type="button" class="cancel-button" id="newCancelButton" onclick="closeNew()"> Cancel </button>
                 </div>
                 <div class="new-topright">
                     <h2 style="margin: 20px 0px 10px 0px;"> Product Name </h2>
@@ -71,6 +71,16 @@
     </div>
     </div>
     <script src="/js/popup_create.js"></script>
-</body>
+    <script>
+        function closePopupNew() {
+            window.parent.closePopupNew();
+        }
 
+        // ปิดหน้าต่าง edit popup
+        function closeNew() {
+            closePopupNew();
+            window.parent.location.reload();
+        }
+    </script>
+</body>
 </html>

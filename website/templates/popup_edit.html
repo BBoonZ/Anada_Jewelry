@@ -25,9 +25,7 @@
             </div>
                 <div class="right">
                     <div class="right-layout">
-
                         <input type="hidden" id="product_id" name="id" value="{{ product[0] }}">
-
                         <div class="margin-inright">
                             <Label for="product-name"> Name: </Label>
                             <input type="text" class="input-text" value="{{ product[1] }}" id="product-name"
@@ -77,10 +75,8 @@
                         </div>
 
                         <div class="margin-inright">
-                            <button type="button" class="edit-cancel-button" id="edit-cancel-button"
-                                onclick="closeEdit()"> Cancel
-                            </button>
-                            <button type="submit" class="edit-submit-button" id="edit-submit-button"> Submit </button>
+                            <button type="button" class="edit-cancel-button" id="edit-cancel-button" onclick="closeEdit()"> Cancel</button>
+                            <button type="submit" class="edit-submit-button" id="edit-submit-button" onclick="closeEdit()"> Submit </button>
 
                         </div>
                     </div>
@@ -90,5 +86,4 @@
     </div>
     <script src="/js/popup_edit.js"></script>
 </body>
-
 </html>

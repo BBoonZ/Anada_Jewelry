@@ -7,7 +7,14 @@
     <title>Anada Jewellery</title>
     <link rel="stylesheet" href="/static/css/stock.css">
     <style>
-        
+        .list_product {
+            margin: 10px 20px 0 20px;
+        }
+        .show_product {
+            width: 100%;
+            padding: 20px 100px;
+            gap: 100px;
+        }
     </style>
 </head>
 
@@ -48,7 +55,8 @@
                 <button class="bracelets" onclick="window.location.href='/stock/type-bracelets';"> <img src="/static/img/bracelet.png" width="50px" height="50px">Bracelets</button>
                 <button class="bangles" onclick="window.location.href='/stock/type-bangles';"> <img src="/static/img/bangles.png" width="50px" height="50px">Bangles</button>
                 <button class="necklaces" onclick="window.location.href='/stock/type-necklaces';"> <img src="/static/img/necklace.png" width="50px" height="50px">Necklaces</button>
-                <button class="pendants" onclick="window.location.href='/stock/type-pendants';"> <img src="/static/img/pendant.png" width="50px" height="50px">Pendants</button><button class="new_item" onclick="window.location.href='/stock/create';" id="new_item">Add product</button>
+                <button class="pendants" onclick="window.location.href='/stock/type-pendants';"> <img src="/static/img/pendant.png" width="50px" height="50px">Pendants</button>
+                <button class="new_item" onclick="window.location.href='/stock/create';" id="new_item" onclick="openNew(this.href); return false;">Add product</button>
                 <!-- <button class="delete_item">Delete Product</button> -->
             </div>
 
@@ -77,7 +85,24 @@
             <iframe id="contentIframe" width="100" height="100"></iframe>
         </div>
 
-        <script src="/js/stock.js"></script>
-    </body>
+        <div id="popup_new" class="popup_new" style="display:none;">
+            <iframe id="contentIframe2" width="900" height="600"></iframe>
+        </div>
 
+        <script src="/js/stock.js"></script>
+        <script>
+            function closePopup() {
+                document.getElementById('popupContainer').style.display = 'none';
+            }
+            function openNew(url) {
+                document.getElementById('popup_new').style.display = 'block';
+                var iframe = document.getElementById('contentIframe2');
+                iframe.src = url;  // Set the iframe's src to the clicked link's href
+                console.log(url)
+            }
+            function closePopupNew() {
+                document.getElementById('popup_new').style.display = 'none';
+            }
+        </script>
+    </body>
 </html>
