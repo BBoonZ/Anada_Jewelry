@@ -152,7 +152,7 @@ header {
 .list_product {
     display: grid;
     grid-template-rows: repeat(10, 1fr);
-    width: 205px;
+    width: 238px;
     overflow: hidden;
     margin: 10px 20px 0 20px;
 }

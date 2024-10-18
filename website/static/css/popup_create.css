@@ -47,11 +47,12 @@ h2{
 
 /* cancel button */
 .cancel-button{
-    font-size: 25px;
+    font-size: 18px;
     margin-top: 30px;
     margin-left: 30px;
     background-color: rgb(255, 115, 115);
     padding: 10px 20px 10px 20px;
+    border: 1px solid black;
     font-family: "Nunito", sans-serif;
 }
 
@@ -118,6 +119,7 @@ select {
     padding: 10px 35px 10px 35px;
     background-color: white;
     border: 1px solid black;
+    font-size: 18px;
     font-family: "Nunito", sans-serif;
 }
 
@@ -131,7 +133,6 @@ select {
     outline: none; /* เอาเส้นขอบออกเมื่อเลือก */
     padding: 5px; /* ระยะห่างภายใน */
     width: 350px; /* ความกว้างของ input */
-    font-family: "Prompt", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 20px;
@@ -143,4 +144,11 @@ select {
     max-width: 300px; /* ปรับขนาดตามต้องการ */
     max-height: 300px; /* ปรับขนาดตามต้องการ */
     display: none; /* เริ่มต้นซ่อน */
+}
+
+textarea {
+    width: 380px;
+    height: 120px;
+    font-size: 20px;
+    resize: none;
 }

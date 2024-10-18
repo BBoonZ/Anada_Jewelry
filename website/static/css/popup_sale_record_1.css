@@ -25,14 +25,14 @@
     margin-bottom: 0;
     font-size: 40px;
     margin-top: -5px;
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", "K2D";
 }
 
 .details{
     margin-top: 0;
     margin-left: 30px;
     color: #9E9C9C;
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", "K2D";
 }
 
 .detail {
@@ -85,9 +85,9 @@
 
 .counter-container button {
     width: 35px;
-    font-size: 20px;
+    font-size: 25px;
     background-color: #ffffff;
-    border: 1px solid #000;
+    border: none;
     cursor: pointer;
 }
 
@@ -138,4 +138,12 @@
     font-size: 20px;
     background-color: #2a9fffb9;
     font-family: "Nunito", sans-serif;
+}
+
+.button_cancel1:hover {
+    background-color: rgb(181, 181, 181);
+}
+
+.button_submit1:hover{
+    background-color: rgb(23, 142, 239);
 }
