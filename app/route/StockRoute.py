@@ -2,7 +2,8 @@ from fastapi import APIRouter, Request, Form, File, UploadFile
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
-from .IRecordSales import RecordManager
+from .RecordSalesProxy import RecordManagerProxy
+from .RecordSales  import RecordManager
 from .Stock import ProductManager
 from .ICreateProduct import ICreateProduct
 from .IDeleteProduct import DeleteProduct
@@ -11,7 +12,7 @@ from .UploadFile import UploadRoute
 class StockRouter:
     def __init__(self):
         self.router = APIRouter()
-        self.IRecord = RecordManager()
+        self.IRecord = RecordManagerProxy(RecordManager())
         self.IStock = ProductManager()
         self.ICreate = ICreateProduct()
         self.IDelete = DeleteProduct()

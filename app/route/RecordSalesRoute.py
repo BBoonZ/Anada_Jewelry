@@ -2,13 +2,14 @@ from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
-from .IRecordSales import RecordManager
+from .RecordSalesProxy import RecordManagerProxy
+from .RecordSales import RecordManager
 from .Stock import ProductManager
 
 class SalesRouter:
     def __init__(self):
         self.router = APIRouter()
-        self.IRecord = RecordManager()
+        self.IRecord = RecordManagerProxy(RecordManager())
         self.IStock = ProductManager()
         BASE_DIR = Path(__file__).resolve().parent.parent.parent  # Navigate up three levels to the project root
         self.templates = Jinja2Templates(directory=str(BASE_DIR / "website" / "templates"))
@@ -33,7 +34,7 @@ class SalesRouter:
         return self.templates.TemplateResponse("popup_sale_record_1.html", {"request": request, "Product": product})
 
     async def save_record(self, id: str = Form(), price: str = Form(), value: str = Form()):
-        await self.IRecord.save_record(id, price, value)
+        await self.IRecord.save_record(id, int(price)*int(value), value)
         return None
 
     async def cart_show(self, request: Request):
