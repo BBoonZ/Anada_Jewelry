@@ -7,7 +7,9 @@
 header {
     background-color: #384B70;
     padding: 50px 0 0 0;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .logo {
@@ -134,7 +136,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin-top: 200px;
 }
 
 /* พื้นที่สีขาว */
@@ -271,6 +273,7 @@ header {
 
 .product_1 {
     width: 350px;
+    height: 350px;
 }
 
 .product_1 img {
@@ -433,8 +436,6 @@ h2{
     margin-top: 10px;
     margin-left: 30px;
 }
-
-
 
 select {
     width: 170px; /* ความกว้างของ dropdown */
