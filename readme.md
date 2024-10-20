@@ -1,1 +1,1 @@
-
+https://anada-jewelry.onrender.com/stock/type-none
