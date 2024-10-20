@@ -21,6 +21,7 @@ class StockRouter:
         self.templates = Jinja2Templates(directory=str(BASE_DIR / "website" / "templates"))
 
         # Define routes
+        self.router.add_api_route("/", self.home, methods=["GET"], response_class=HTMLResponse)
         self.router.add_api_route("/stock/type-{type}", self.stock_home, methods=["GET"], response_class=HTMLResponse)
         self.router.add_api_route("/stock/edit/{product_id}", self.stock_popup_edit, methods=["GET"], response_class=HTMLResponse)
         self.router.add_api_route("/stock/create/", self.create_product, methods=["GET"], response_class=HTMLResponse)
@@ -28,6 +29,9 @@ class StockRouter:
         self.router.add_api_route("/stock/delete/{product_id}", self.delete_product, methods=["POST"])
         self.router.add_api_route("/stock/edit/{product_id}", self.summit_popup_edit, methods=["POST"])
     
+    async def home(self, request: Request):
+        return self.templates.TemplateResponse("home.html", {"request": request})
+
     async def stock_home(self, request: Request, type):
         info = self.IStock.get_all()
         if type != "none":
@@ -51,6 +55,7 @@ class StockRouter:
 
     async def summit_popup_edit(self, id: str = Form(), name: str = Form(),file: UploadFile = File(), info: str = Form(), type: str = Form(), price: str = Form(), value: str = Form()):
         print(id, name, info, type, price, value)
+        print(file.filename)
         # return RedirectResponse(url="/stock", status_code=303)
         # await self.Upload.upload_file(file)
         await self.IStock.setProduct(id, name, type, info, price, value, file)

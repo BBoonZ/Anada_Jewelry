@@ -59,16 +59,42 @@ class ProductManager:
 
     async def setProduct(self, id, name, type, detail, price, stock, pic):
         type = self.ICreate.convert_type(type)
+        # print(pic.filename == "")
+        if pic.filename == "":
+            print("None")
+            self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? WHERE id = ?", (name, detail, stock, type, price, id))
+            self.conn.commit()
+        else:
+            await self.IUpload.upload_file(pic)
+            self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? , file_pic = ? WHERE id = ?", (name, detail, stock, type, price, pic.filename, id))
+            self.conn.commit()
+            print("Success")
         #Delete Pic
-        self.cursor.execute("SELECT file_pic FROM product WHERE id = ? AND file_pic != 'main.png'", (id,))
-        try:
-            file = self.cursor.fetchall()[0][0]
-            await self.IUpload.delete_file(file)
-            await self.IUpload.upload_file(pic)
-        except:
-            await self.IUpload.upload_file(pic)
-        self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? , file_pic = ? WHERE id = ?", (name, detail, stock, type, price, pic.filename, id))
-        self.conn.commit()
+
+        # self.cursor.execute("SELECT file_pic FROM product")
+        # file = self.cursor.fetchall()[0]
+        # self.cursor.execute("SELECT file_pic FROM product WHERE id = ?", (id,))
+        # file2 = self.cursor.fetchall()[0][0]
+        # # print(self.cursor.fetchall()[0][0])
+        # for i in file:
+        #     print(pic.filename, i)
+        #     if i == pic.filename:
+        #         self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? , file_pic = ? WHERE id = ?", (name, detail, stock, type, price, pic.filename, id))
+        #         self.conn.commit()
+        #         return
+        
+        # await self.IUpload.delete_file(file2)
+        # await self.IUpload.upload_file(pic)
+        # self.cursor.execute("UPDATE product SET name = ?, information = ?, stock_quantity = ?, type = ?, price = ? , file_pic = ? WHERE id = ?", (name, detail, stock, type, price, pic.filename, id))
+        # self.conn.commit()
+
+        # try:
+        #     
+        #     await self.IUpload.delete_file(file)
+        #     await self.IUpload.upload_file(pic)
+        # except:
+        #     await self.IUpload.upload_file(pic)
+        
 
 # DecreaseProduct([6])
 # IncreaseProduct("6")
