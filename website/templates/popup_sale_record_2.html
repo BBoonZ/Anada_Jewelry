@@ -29,7 +29,7 @@
 
                 <input name="value" type="number" class="quantity" min="1" max="999" value="{{ i[6] }}" 
                     oninput="checkQuantity(this)" onblur="submitValue(this, '{{ i[7] }}')">
-                    <input name="price" type="text" class="price" value="฿ {{ i[5] }}" oninput="preventRemoveSymbol(this)" onblur="submitPrice(this, '{{ i[7] }}')">
+                <input name="price" type="text" class="price" value="฿ {{ i[5] }}" oninput="preventRemoveSymbol(this)" onblur="submitPrice(this, '{{ i[7] }}')">
 
             </div>
             {% endfor %}

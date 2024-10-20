@@ -9,6 +9,7 @@ form {
     grid-template-columns: repeat(1fr, 1fr, 1fr);
     border: 1px solid black;
     padding: 10px 10px 0 10px;
+    margin: auto;
 }
 
 .list {
@@ -128,4 +129,44 @@ table th {
 
 .border_button {
     border: none;
+}
+
+@media (max-width: 1024px) {
+    .inside_list {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inside_list {
+        width: 200px;
+        font-size: 12px;
+    }
+    
+    .list img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .quantity {
+        font-size: 12px;
+    }
+    
+    .price {
+        font-size: 12px;
+    }
+    .bin {
+        background-size: 18px;
+    }
+}
+
+@media (max-width: 510px){
+    .list {
+        overflow-y: auto;
+    }
+
+    .inside_list {
+        width: 220px;
+        font-size: 12px;
+    }
 }
