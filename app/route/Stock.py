@@ -41,7 +41,7 @@ class ProductManager:
         current_quantity = self.cursor.fetchall()[0][0]
 
         # Update stock quantity
-        new_quantity = int(current_quantity) - int(num)
+        new_quantity = max(int(current_quantity) - int(num), 0)
         self.cursor.execute("UPDATE product SET stock_quantity = ? WHERE id = ?", (new_quantity, product_ids))
         self.conn.commit()
         print("DecreaseSuccess")

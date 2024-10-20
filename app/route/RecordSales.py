@@ -52,6 +52,7 @@ class RecordManager(IRecordManager):
 
     async def set_record_temp(self):
         self.Record_temp = []
+        self.add = []
 
     async def edit_record(self, id, type, value):
         for i, j in enumerate(self.Record_temp):
