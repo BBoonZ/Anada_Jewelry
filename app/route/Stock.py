@@ -1,5 +1,5 @@
 from .IDatabase import DatabaseConnection
-from .ICreateProduct import ICreateProduct
+from .CreateProduct import ICreateProduct
 from .UploadFile import UploadRoute
 
 class ProductManager:

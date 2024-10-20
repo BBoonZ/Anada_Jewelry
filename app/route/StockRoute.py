@@ -5,7 +5,7 @@ from pathlib import Path
 from .RecordSalesProxy import RecordManagerProxy
 from .RecordSales  import RecordManager
 from .Stock import ProductManager
-from .ICreateProduct import ICreateProduct
+from .CreateProduct import ICreateProduct
 from .IDeleteProduct import DeleteProduct
 from .UploadFile import UploadRoute
 
