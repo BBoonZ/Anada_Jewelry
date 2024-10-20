@@ -4,41 +4,23 @@ h2{
     margin-top: 5px;
 }
 
-.edit-popup{
-    position: fixed; /* ให้แสดงอยู่ด้านบน */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* จัดให้อยู่ตรงกลางหน้าจอ */
-    width: 900px;
-    height: 600px;
-    background-color: white; /* ให้พื้นหลังเป็นสีขาว */
-    z-index: 1000; /* สูงกว่า overlay */
-    display:block; /* ซ่อนไว้ก่อน */
-    border-radius: 15px;
-    border: 1px solid black;
-}
-
 .edit-layout{
     display: grid;
-    grid-template-columns: 400px 500px;
-    grid-template-rows: 100px 500px;
-    grid-template-areas: 
-            'top top'
-            'left right';
+    grid-template-columns: auto 1fr;
 }
 
-.top{
-    grid-area: top;
+.help_me {
+    grid-column: 1;
 }
 
-.left{
-    grid-area: left;
+.right-layout {
+    grid-column: 2;
+    justify-self: start;
 }
 
-.right{
-    grid-area: right;
+.help_me {
+    display: flexbox;
 }
-
 
 .edit-product-picture{
     width: 350px;
@@ -49,8 +31,7 @@ h2{
 
 .change-picture-button{
     background-color: white;
-    margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 10px;
     padding: 7px 10px 7px 10px;
     border: 0.5px solid black;
     font-family: "Nunito", sans-serif;
@@ -63,6 +44,7 @@ h2{
 .right-layout{
     width: 470px;
     height: 470px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -165,4 +147,35 @@ Label {
 select {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+@media (max-width: 1024px){
+    .margin-inright input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px){
+    .margin-inright input {
+        width: 200px;
+    }
+    
+    .edit-product-picture{
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+    .change-picture-button{
+        margin-top: 10px;
+    }
+
+    .cancel-button{
+        margin-left: 10px;
+    }
+
+    .margin-inright input {
+        width: 180px;
+    }
 }

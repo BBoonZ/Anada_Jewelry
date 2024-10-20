@@ -17,22 +17,23 @@
     <form action="/stock/create/submit" method="post" enctype="multipart/form-data">
         <div class="new-product" id="newProductPopup">
             <div class="new-product-layout">
-                <div class="new-topleft">
-                    <button type="button" class="cancel-button" id="newCancelButton" onclick="closeNew()"> Cancel </button>
-                </div>
-                <div class="new-topright">
-                    <h2> Product Name </h2>
-                    <input type="text" class="input-text" name="name" required>
-                </div>
-
-                <div class="new-downleft">
-                    <!-- <img src="/static/img/ring.png" alt="" class="new-image"> -->
-
-                    <button type="button" class="add-picture-button" id="add-picture-button">Add Picture</button>
-                    <input type="file" name="file" id="fileInput" style="display: none;" accept="image/png, image/jpeg">
-                    <img id="imagePreview" class="new-image" alt="Image Preview" style="display: none;">
+                <div class="help_me">
+                    <div class="new-topleft">
+                        <button type="button" class="cancel-button" id="newCancelButton" onclick="closeNew()"> Cancel </button>
+                    </div>
+    
+                    <div class="new-downleft">
+                        <img id="imagePreview" class="new-image" alt="Image Preview" style="display: none;">
+                        <button type="button" class="add-picture-button" id="add-picture-button">Add Picture</button>
+                        <input type="file" name="file" id="fileInput" style="display: none;" accept="image/png, image/jpeg">
+                    </div>
                 </div>
                 <div class="new-downright">
+                    <div class="new-topright">
+                        <h2> Product Name </h2>
+                        <input type="text" class="input-text" name="name" required>
+                    </div>
+
                     <div class="downright-item">
                         <h2> Details </h2>
                         <textarea name="info"></textarea>
@@ -52,10 +53,6 @@
                         </select>
                     </div>
 
-                    <!-- <div class="downright-item">
-                        <h2> ต้นทุน </h2>
-                        <input type="text" class="input-text">
-                    </div> -->
 
                     <div class="downright-item">
                         <h2> quantity </h2>
@@ -71,9 +68,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </form>
-    </div>
-    </div>
     <script src="/js/popup_create.js"></script>
     <script>
         function closePopupNew() {

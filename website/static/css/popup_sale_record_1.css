@@ -15,7 +15,6 @@
 }
 
 .picture_product img {
-    max-width: 100%; /* ทำให้ภาพไม่ใหญ่กว่ากรอบ */
     width: 430px;
     height: 420px;
     object-fit: contain;
